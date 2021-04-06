@@ -1,0 +1,29 @@
+@import "../../../core/styles/colors";
+
+.header {
+  padding: 0 10px;
+  margin-bottom: 3px;
+
+  &__menu-item {
+    margin: 0 5px !important;
+    padding: 0 20px !important;
+  }
+
+  &__logo {
+    float: left;
+  }
+
+  &__user , &__logout {
+    //float: right;
+  }
+}
+
+.header-light {
+  @include light-theme()
+}
+
+.header-dark {
+
+}
+
+

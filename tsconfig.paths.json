@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./src",
+    "paths": {
+      "@Config": ["core/config"],
+      "@Store": ["core/store/store"],
+      "@ServiceContainer": ["core/services/serviceContainer"],
+
+      "@Shared/*": ["shared/*"],
+      "@Core/*": ["core/*"],
+      "@Pages/*": ["pages/*"]
+    }
+  }
+}
