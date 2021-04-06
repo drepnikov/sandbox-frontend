@@ -2,7 +2,7 @@
   "compilerOptions": {
     "baseUrl": "./src",
     "paths": {
-      "@Config": ["core/config"],
+      "@Config": ["application/config"],
       "@Store": ["core/store/store"],
       "@ServiceContainer": ["core/services/ServiceContainer"],
 

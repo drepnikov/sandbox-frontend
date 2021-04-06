@@ -1,18 +1,21 @@
-import { API_PATHS } from "@Core/services/api/constants";
+import { IStorageService } from "@Core/services/browser/StorageService/StorageService";
+import { IConfig } from "@Config";
 
 class _RequestService {
-  private readonly _domain: string;
-
-  constructor(domain?: string) {
-    this._domain = domain || API_PATHS.BASE;
-  }
+  constructor(private _storageService: IStorageService, private _config: IConfig) {}
 
   private async _perform(url: string, data?: any, settings?: RequestInit) {
-    const headers = {
+    const { BASE_URL } = this._config.API;
+
+    const headers: { [key: string]: string } = {
       "Content-Type": "application/json; charset=utf-8",
     };
 
-    const request = await fetch(this._domain + url, {
+    const token = this._storageService.getToken();
+
+    if (token) headers["custom-auth-token"] = token;
+
+    const request = await fetch(BASE_URL + url, {
       ...settings,
       body: JSON.stringify(data),
       headers,
@@ -21,10 +24,11 @@ class _RequestService {
     return request.json();
   }
 
-  protected async get<Response>(path: string, searchParams?: { [key: string]: string }): Promise<Response> {
-    const fullPath = searchParams ? new URLSearchParams(searchParams).toString() : path;
-
-    return this._perform(fullPath);
+  /**
+   * Search params кидать сразу в path
+   */
+  protected async get<Response>(path: string): Promise<Response> {
+    return this._perform(path);
   }
 
   protected async post<Response, Payload>(path: string, payload: Payload): Promise<Response> {
