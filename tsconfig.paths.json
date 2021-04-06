@@ -4,7 +4,7 @@
     "paths": {
       "@Config": ["core/config"],
       "@Store": ["core/store/store"],
-      "@ServiceContainer": ["core/services/serviceContainer"],
+      "@ServiceContainer": ["core/services/ServiceContainer"],
 
       "@Shared/*": ["shared/*"],
       "@Core/*": ["core/*"],

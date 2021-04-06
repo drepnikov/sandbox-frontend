@@ -1,4 +1,4 @@
-interface IStorageService {
+export interface IStorageService {
   getToken: () => string | null;
   setToken: (token: string) => boolean;
 
