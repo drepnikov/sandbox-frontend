@@ -25,11 +25,11 @@ class AuthService extends _RequestService implements IAuthService {
     async login(params: ILoginParams): Promise<string | null> {
         const { login } = this.config.API;
 
-        const result = this.post<ILoginResponse>(login, params);
+        const result = await this.post<ILoginResponse>(login, params);
 
         console.log(result);
 
-        return "12345";
+        return null;
     }
 
     async logout(): Promise<boolean> {
