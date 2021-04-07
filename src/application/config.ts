@@ -1,25 +1,16 @@
-export interface IConfig {
-  ROUTE_PATHS: {
-    [key: string]: string;
-  };
+export class Config {
+    readonly ROUTE_PATHS = Object.freeze({
+        main: "/",
+        login: "/login",
+    });
 
-  API: {
-    BASE_URL: string;
+    readonly API = Object.freeze({
+        BASE_URL: process.env.NODE_ENV !== "development" ? "" : "http://site-test.mailru.local",
 
-    [key: string]: string;
-  };
+        login: "/v1/auth/login",
+    });
 }
 
-const config: IConfig = {
-  API: {
-    BASE_URL: process.env.NODE_ENV !== "development" ? "" : "http://site-test.mailru.local",
-
-    login: "/v1/auth/login",
-  },
-  ROUTE_PATHS: {
-    main: "/",
-    login: "/login",
-  },
-};
+const config = new Config();
 
 export { config };
