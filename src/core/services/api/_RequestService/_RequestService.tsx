@@ -1,9 +1,10 @@
 import { IStorageService } from "@Core/services/browser/StorageService/StorageService";
 import { Config } from "@Config";
 import { ILogger } from "@Core/services/utils/Logger/Logger";
+import { store } from "@Store";
 
 class _RequestService {
-    constructor(private _storageService: IStorageService, protected config: Config, private _logger: ILogger) {}
+    constructor(protected config: Config, private _storageService: IStorageService, private _logger: ILogger) {}
 
     private async _perform(url: string, data?: any, settings?: RequestInit) {
         const { BASE_URL } = this.config.API;
@@ -12,9 +13,9 @@ class _RequestService {
             "Content-Type": "application/json; charset=utf-8",
         };
 
-        const token = this._storageService.getToken();
+        const token = this._storageService.getUserSessionInfo()?.token;
 
-        if (token) headers["custom-auth-token"] = token;
+        if (token) headers["x-ecom-auth-token"] = token;
 
         const request = await fetch(BASE_URL + url, {
             ...settings,
@@ -31,9 +32,29 @@ class _RequestService {
                 return null;
             }
         } else {
+            this._handlingErrorCode(request.status);
+
             this._logger.error("Неудачный запрос", request);
 
             return null;
+        }
+    }
+
+    private _handlingErrorCode(code: number) {
+        let message = null;
+
+        switch (code) {
+            case 401:
+                //todo: Не хотелось бы взаимодействовать со стором из сервисов. Желательно только из react-компонентов.
+                //      В этом сервисе оставлю, но лучше избегать подобного.
+
+                store.sessionStore.logout();
+                message = "Не найдена сессия пользователя";
+                break;
+        }
+
+        if (message) {
+            this._logger.info(message);
         }
     }
 

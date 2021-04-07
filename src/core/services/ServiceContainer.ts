@@ -8,11 +8,11 @@ import { Logger } from "@Core/services/utils/Logger/Logger";
 const storageService = new StorageService(localStorage);
 const urlService = new URLService();
 
-//utils
+// utils
 const logger = new Logger();
 
 // api
-const authService = new AuthService(storageService, config, logger);
+const authService = new AuthService(config, storageService, logger);
 
 const ServiceContainer = {
     authService,

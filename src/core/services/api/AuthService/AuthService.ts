@@ -6,11 +6,11 @@ export interface ILoginParams {
 }
 
 export interface IAuthService {
-    login: (params: ILoginParams) => Promise<string | null>;
+    login: (params: ILoginParams) => Promise<ILoginResponse | null>;
     logout: () => Promise<boolean>;
 }
 
-interface ILoginResponse {
+export interface ILoginResponse {
     token: string;
     userId: string;
     userName: string;
@@ -22,14 +22,12 @@ class AuthService extends _RequestService implements IAuthService {
     /**
      * Возвращает токен
      */
-    async login(params: ILoginParams): Promise<string | null> {
+    async login(params: ILoginParams): Promise<ILoginResponse | null> {
         const { login } = this.config.API;
 
         const result = await this.post<ILoginResponse>(login, params);
 
-        console.log(result);
-
-        return null;
+        return result ? result : null;
     }
 
     async logout(): Promise<boolean> {

@@ -1,30 +1,40 @@
-export interface IStorageService {
-  getToken: () => string | null;
-  setToken: (token: string) => boolean;
+import { ILoginResponse } from "@Core/services/api/AuthService/AuthService";
 
-  clear: () => boolean;
+export interface IStorageService {
+    getUserSessionInfo: () => ILoginResponse | null;
+    setUserSessionInfo: (userSessionInfo: ILoginResponse) => boolean;
+
+    clear: () => boolean;
 }
 
 class StorageService implements IStorageService {
-  private readonly _TOKEN_KEY = "session_token";
+    private readonly _USER_SESSION_KEY = "user_session";
 
-  constructor(private _storage: Storage) {}
+    constructor(private _storage: Storage) {}
 
-  getToken() {
-    return this._storage.getItem(this._TOKEN_KEY);
-  }
+    // getToken() {
+    //     const userSession = this._storage.getItem(this._USER_SESSION_KEY);
+    //
+    //     return userSession ? (JSON.parse(userSession) as ILoginResponse).token : null;
+    // }
 
-  setToken(token: string) {
-    this._storage.setItem(this._TOKEN_KEY, token);
+    getUserSessionInfo() {
+        const userSession = this._storage.getItem(this._USER_SESSION_KEY);
 
-    return true;
-  }
+        return userSession ? (JSON.parse(userSession) as ILoginResponse) : null;
+    }
 
-  clear() {
-    this._storage.clear();
+    setUserSessionInfo(userSessionInfo: ILoginResponse) {
+        this._storage.setItem(this._USER_SESSION_KEY, JSON.stringify(userSessionInfo));
 
-    return true;
-  }
+        return true;
+    }
+
+    clear() {
+        this._storage.clear();
+
+        return true;
+    }
 }
 
 export { StorageService };

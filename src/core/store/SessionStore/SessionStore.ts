@@ -1,5 +1,5 @@
 import { flow, types } from "mobx-state-tree";
-import { ILoginParams } from "@Core/services/api/AuthService/AuthService";
+import { ILoginParams, ILoginResponse } from "@Core/services/api/AuthService/AuthService";
 import { ServiceContainer } from "@Core/services/ServiceContainer";
 
 const state = {
@@ -11,7 +11,7 @@ const SessionStore = types.model("SessionStore", state).actions((self) => {
         recoverSession: () => {
             const { storageService } = ServiceContainer;
 
-            const token = storageService.getToken();
+            const token = storageService.getUserSessionInfo()?.token;
 
             if (token) {
                 self.isAuthenticated = true;
@@ -22,10 +22,10 @@ const SessionStore = types.model("SessionStore", state).actions((self) => {
             const { authService, storageService } = ServiceContainer;
 
             //todo: почему, при вызове через yeild, мне приходится дублировать обьявление типа в переменной??
-            const token: string | null = yield authService.login(credentials);
+            const userSessionInfo: ILoginResponse | null = yield authService.login(credentials);
 
-            if (token) {
-                storageService.setToken(token);
+            if (userSessionInfo) {
+                storageService.setUserSessionInfo(userSessionInfo);
 
                 self.isAuthenticated = true;
             }
