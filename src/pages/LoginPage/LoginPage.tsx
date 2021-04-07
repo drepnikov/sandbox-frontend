@@ -1,31 +1,17 @@
 import * as React from "react";
-import { useStore } from "@Store";
-import { observer } from "mobx-react-lite";
-import { RouteComponentProps } from "react-router-dom";
-import { FormEventHandler, useState } from "react";
+import { LoginForm } from "@Pages/LoginPage/containers/LoginForm/LoginForm";
 
-interface IProps extends RouteComponentProps {}
+interface IProps {}
 
-const LoginPage: React.FunctionComponent<IProps> = observer(({ location }) => {
-    const { sessionStore } = useStore();
-
-    const [login, setLogin] = useState("");
-    const [password, setPassword] = useState("");
-
-    const onSubmit: FormEventHandler = (e) => {
-        e.preventDefault();
-
-        sessionStore.login({ login, password });
-    };
-
+const LoginPage: React.FunctionComponent<IProps> = () => {
     return (
-        <form onSubmit={onSubmit}>
-            <input onChange={(e) => setLogin(e.target.value)} value={login} type={"text"} />
-            <input onChange={(e) => setPassword(e.target.value)} value={password} type={"password"} />
-
-            <button type={"submit"}>Отправить</button>
-        </form>
+        <div className={"login-page"}>
+            <div className={"login-page__logo"}>Лого</div>
+            <div className={"login-page__form"}>
+                <LoginForm />
+            </div>
+        </div>
     );
-});
+};
 
 export { LoginPage };
