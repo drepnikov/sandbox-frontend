@@ -1,0 +1,16 @@
+.login-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+    border: 1px solid red;
+    background-color: #7abaff;
+}
+
+.login-page__form {
+    min-height: 50vh;
+    border: 1px solid black;
+    border-radius: 5%;
+    padding: 10px 25px;
+    background-color: pink;
+}

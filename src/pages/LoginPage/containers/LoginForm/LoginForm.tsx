@@ -3,6 +3,8 @@ import { useStore } from "@Store";
 import { observer } from "mobx-react-lite";
 import { FormEventHandler, useState } from "react";
 
+import "./LoginForm.scss";
+
 interface IProps {}
 
 const LoginForm: React.FunctionComponent<IProps> = observer(() => {
@@ -14,21 +16,26 @@ const LoginForm: React.FunctionComponent<IProps> = observer(() => {
     const onSubmit: FormEventHandler = (e) => {
         e.preventDefault();
 
-        sessionStore.login({ login, password });
+        // sessionStore.login({ login, password });
     };
 
     return (
-        <form className={"login-form"} onSubmit={onSubmit}>
-            <input className={"login-form__input login-form__input--login"} onChange={(e) => setLogin(e.target.value)} value={login} type={"text"} />
-            <input
-                className={"login-form__input login-form__input--password"}
-                onChange={(e) => setPassword(e.target.value)}
-                value={password}
-                type={"password"}
-            />
+        <div className={"login-form"}>
+            <nav className={"login-form__nav"}>Навигация</nav>
+            <form className={"login-form__controls"} onSubmit={onSubmit}>
+                <input className={"login-form__input login-form__input--login"} onChange={(e) => setLogin(e.target.value)} value={login} type={"text"} />
+                <input
+                    className={"login-form__input login-form__input--password"}
+                    onChange={(e) => setPassword(e.target.value)}
+                    value={password}
+                    type={"password"}
+                />
 
-            <button type={"submit"}>Отправить</button>
-        </form>
+                <button className={"login-form__btn"} type={"submit"}>
+                    Отправить
+                </button>
+            </form>
+        </div>
     );
 });
 

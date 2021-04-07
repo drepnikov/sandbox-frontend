@@ -8,21 +8,21 @@ import { useEffect } from "react";
 interface IProps {}
 
 const App: React.FunctionComponent<IProps> = observer(() => {
-  const { sessionStore } = useStore();
+    const { sessionStore } = useStore();
 
-  useEffect(() => {
-    sessionStore.recoverSession();
-  }, [sessionStore]);
+    useEffect(() => {
+        sessionStore.recoverSession();
+    }, [sessionStore]);
 
-  const getRouter = () => {
-    if (sessionStore.isAuthenticated) {
-      return <UserRouter />;
-    } else {
-      return <GuestRouter />;
-    }
-  };
+    const getRouter = () => {
+        if (sessionStore.isAuthenticated) {
+            return <UserRouter />;
+        } else {
+            return <GuestRouter />;
+        }
+    };
 
-  return <div className="App">{getRouter()}</div>;
+    return getRouter();
 });
 
 export { App };

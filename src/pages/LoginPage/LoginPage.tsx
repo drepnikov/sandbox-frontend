@@ -1,6 +1,8 @@
 import * as React from "react";
 import { LoginForm } from "@Pages/LoginPage/containers/LoginForm/LoginForm";
 
+import "./LoginPage.scss";
+
 interface IProps {}
 
 const LoginPage: React.FunctionComponent<IProps> = () => {
