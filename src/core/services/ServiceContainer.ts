@@ -11,9 +11,9 @@ const urlService = new URLService();
 const authService = new AuthService(storageService, config);
 
 const ServiceContainer = {
-  authService,
-  storageService,
-  urlService,
+    authService,
+    storageService,
+    urlService,
 };
 
 export { ServiceContainer };
