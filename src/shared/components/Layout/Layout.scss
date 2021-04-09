@@ -1,0 +1,24 @@
+.row {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+@media (min-width: 576px) {
+    .row {
+        flex-direction: row;
+    }
+}
+
+.column {
+}
+
+@media (min-width: 576px) {
+    .column {
+        flex-basis: 50vw;
+    }
+}
+
+.vertical-center {
+    align-self: center;
+};

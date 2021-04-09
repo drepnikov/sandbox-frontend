@@ -6,12 +6,15 @@
     margin-bottom: 10px;
 }
 
-.signin-form__input {
+.auth-form__input {
     display: block;
     width: 100%;
     margin-bottom: 10px;
 }
 
-.signin-form__btn {
+.auth-form__input__btn {
     width: 100%;
+
+    background-color: blueviolet;
+    color: white
 }

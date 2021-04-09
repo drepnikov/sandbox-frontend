@@ -35,16 +35,11 @@ const SigninForm: React.FunctionComponent<IProps> = () => {
 
     return (
         <form className={"signin-form__controls"} onSubmit={onSubmit}>
-            <input className={"signin-form__input signin-form__input--login"} onChange={(e) => setLogin(e.target.value)} value={login} type={"text"} />
-            <input
-                className={"signin-form__input signin-form__input--password"}
-                onChange={(e) => setPassword(e.target.value)}
-                value={password}
-                type={"password"}
-            />
+            <input placeholder={"Логин"} className={"auth-form__input"} onChange={(e) => setLogin(e.target.value)} value={login} type={"text"} />
+            <input placeholder={"Пароль"} className={"auth-form__input"} onChange={(e) => setPassword(e.target.value)} value={password} type={"password"} />
 
-            <button className={"signin-form__btn"} type={"submit"}>
-                Войти
+            <button className={"auth-form__btn"} type={"submit"}>
+                Отправить
             </button>
         </form>
     );

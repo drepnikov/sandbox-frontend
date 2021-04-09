@@ -1,4 +1,13 @@
 .navigation {
-  display: flex;
-  justify-content: center;
+    display: flex;
+    justify-content: center;
+}
+
+.navigation__tab {
+  padding: 10px;
+  border-bottom: 1px solid grey;
+  margin-right: 3px;
+}
+.navigation__tab--current-true {
+  border-bottom: 2px solid black;
 }

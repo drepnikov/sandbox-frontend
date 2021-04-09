@@ -7,7 +7,7 @@ export class Config {
     readonly API = Object.freeze({
         BASE_URL: process.env.NODE_ENV !== "development" ? "" : "http://site-test.mailru.local",
 
-        login: "/v1/auth/login",
+        login: "/v1/auth/logins",
     });
 }
 

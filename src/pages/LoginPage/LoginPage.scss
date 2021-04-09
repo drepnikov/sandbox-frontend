@@ -1,7 +1,4 @@
 .login-page {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
     height: 100vh;
     border: 1px solid red;
     background-color: #7abaff;
@@ -9,11 +6,20 @@
 }
 
 .login-page__form {
-    position: relative;
-    top: 20px;
     min-height: 50vh;
+    margin-top: 20px;
     border: 1px solid black;
     border-radius: 5%;
     padding: 10px 25px;
     background-color: pink;
+}
+@media(min-width: 576px) {
+    .login-page__form {
+        height: 300px;
+        margin-top: 0;
+    }
+}
+
+.login-page__logo {
+    min-height: 50vh;
 }
