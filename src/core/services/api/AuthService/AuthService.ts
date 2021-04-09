@@ -22,12 +22,14 @@ class AuthService extends _RequestService implements IAuthService {
     /**
      * Возвращает токен
      */
-    async login(params: ILoginParams): Promise<ILoginResponse | null> {
+    async login(params: ILoginParams): Promise<ILoginResponse> {
         const { login } = this.config.API;
 
         const result = await this.post<ILoginResponse>(login, params);
 
-        return result ? result : null;
+        if (!result) throw new Error("Информация о сессии не получена");
+
+        return result;
     }
 
     async logout(): Promise<boolean> {

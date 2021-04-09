@@ -1,7 +1,7 @@
 import * as React from "react";
-import { LoginForm } from "@Pages/LoginPage/containers/LoginForm/LoginForm";
 
 import "./LoginPage.scss";
+import { AuthForm } from "@Shared/containers/AuthForm/AuthForm";
 
 interface IProps {}
 
@@ -10,7 +10,7 @@ const LoginPage: React.FunctionComponent<IProps> = () => {
         <div className={"login-page"}>
             <div className={"login-page__logo"}>Лого</div>
             <div className={"login-page__form"}>
-                <LoginForm />
+                <AuthForm />
             </div>
         </div>
     );

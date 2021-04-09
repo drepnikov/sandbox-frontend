@@ -1,7 +1,6 @@
 import { IStorageService } from "@Core/services/browser/StorageService/StorageService";
 import { Config } from "@Config";
 import { ILogger } from "@Core/services/utils/Logger/Logger";
-import { store } from "@Store";
 
 class _RequestService {
     constructor(protected config: Config, private _storageService: IStorageService, private _logger: ILogger) {}
@@ -32,29 +31,7 @@ class _RequestService {
                 return null;
             }
         } else {
-            this._handlingErrorCode(request.status);
-
-            this._logger.error("Неудачный запрос", request);
-
-            return null;
-        }
-    }
-
-    private _handlingErrorCode(code: number) {
-        let message = null;
-
-        switch (code) {
-            case 401:
-                //todo: Не хотелось бы взаимодействовать со стором из сервисов. Желательно только из react-компонентов.
-                //      В этом сервисе оставлю, но лучше избегать подобного.
-
-                store.sessionStore.logout();
-                message = "Не найдена сессия пользователя";
-                break;
-        }
-
-        if (message) {
-            this._logger.info(message);
+            throw new Error("Код ошибки " + request.status);
         }
     }
 

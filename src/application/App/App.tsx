@@ -1,9 +1,9 @@
 import * as React from "react";
 import { observer } from "mobx-react-lite";
-import { useStore } from "@Store";
 import { GuestRouter } from "@Shared/containers/Routers/GuestRouter";
 import { UserRouter } from "@Shared/containers/Routers/UserRouter";
 import { useEffect } from "react";
+import { useStore } from "@Shared/hooks/useStore";
 
 interface IProps {}
 

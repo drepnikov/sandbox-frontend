@@ -3,18 +3,25 @@ import ReactDOM from "react-dom";
 import { App } from "./application/App/App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
-import { store, StoreContext } from "@Store";
+import { QueryClientProvider } from "react-query";
+import { queryClient } from "./application/queryClient";
+import { ReactQueryDevtools } from "react-query/devtools";
+import { store } from "@Store";
+import { StoreContext } from "@Core/store/storeContext";
 
 import "@Core/styles/main.scss";
 
 ReactDOM.render(
-    <BrowserRouter>
-        <React.StrictMode>
-            <StoreContext.Provider value={store}>
-                <App />
-            </StoreContext.Provider>
-        </React.StrictMode>
-    </BrowserRouter>,
+    <React.StrictMode>
+        <BrowserRouter>
+            <QueryClientProvider client={queryClient}>
+                <StoreContext.Provider value={store}>
+                    <App />
+                </StoreContext.Provider>
+                <ReactQueryDevtools initialIsOpen={false} />
+            </QueryClientProvider>
+        </BrowserRouter>
+    </React.StrictMode>,
     document.getElementById("root")
 );
 

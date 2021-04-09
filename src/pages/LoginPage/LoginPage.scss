@@ -2,12 +2,15 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    min-height: 100vh;
+    height: 100vh;
     border: 1px solid red;
     background-color: #7abaff;
+    overflow: hidden;
 }
 
 .login-page__form {
+    position: relative;
+    top: 20px;
     min-height: 50vh;
     border: 1px solid black;
     border-radius: 5%;

@@ -12,12 +12,6 @@ class StorageService implements IStorageService {
 
     constructor(private _storage: Storage) {}
 
-    // getToken() {
-    //     const userSession = this._storage.getItem(this._USER_SESSION_KEY);
-    //
-    //     return userSession ? (JSON.parse(userSession) as ILoginResponse).token : null;
-    // }
-
     getUserSessionInfo() {
         const userSession = this._storage.getItem(this._USER_SESSION_KEY);
 
