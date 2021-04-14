@@ -1,24 +1,24 @@
-.row {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
+@import "src/core/styles/screens";
+
+.grid-container {
+    display: grid;
+    min-height: 100%;
 }
 
-@media (min-width: 576px) {
-    .row {
-        flex-direction: row;
+// login page
+.grid-container--login-page {
+    grid-template-rows: 1fr 1fr;
+    align-items: center;
+
+    .grid-item {}
+
+    @media (min-width: $desktop) {
+        grid-template-rows: none;
+        grid-template-columns: 1fr 1fr;
+
+        .grid-item {
+        }
     }
 }
 
-.column {
-}
-
-@media (min-width: 576px) {
-    .column {
-        flex-basis: 50vw;
-    }
-}
-
-.vertical-center {
-    align-self: center;
-};
+// other pages

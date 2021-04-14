@@ -11,3 +11,8 @@
 .navigation__tab--current-true {
   border-bottom: 2px solid black;
 }
+
+.navigation__tab--disabled-true {
+  cursor: initial;
+  opacity: 50%;
+}

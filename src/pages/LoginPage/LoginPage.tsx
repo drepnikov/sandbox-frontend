@@ -1,26 +1,30 @@
 import * as React from "react";
 
-import "./LoginPage.scss";
 import { AuthForm } from "@Shared/containers/AuthForm/AuthForm";
-import { Row } from "@Shared/components/Layout/Row";
-import { Column } from "@Shared/components/Layout/Column";
+import { Layout } from "@Shared/components/Layout/Layout";
+
+import "./LoginPage.scss";
+import { ReactComponent as DocumentIcon } from "./assets/document.svg";
+import { LayoutItem } from "@Shared/components/Layout/LayoutItem/LayoutItem";
 
 interface IProps {}
 
 const LoginPage: React.FunctionComponent<IProps> = () => {
     return (
         <main className={"login-page"}>
-            <Row>
-                <Column>
-                    <div className={"login-page__logo"}>Лого</div>
-                </Column>
+            <Layout page={"login-page"}>
+                <LayoutItem>
+                    <div className={"login-page__logo"}>
+                        <DocumentIcon height={300} width={200} />
+                    </div>
+                </LayoutItem>
 
-                <Column>
+                <LayoutItem>
                     <div className={"login-page__form"}>
                         <AuthForm />
                     </div>
-                </Column>
-            </Row>
+                </LayoutItem>
+            </Layout>
         </main>
     );
 };

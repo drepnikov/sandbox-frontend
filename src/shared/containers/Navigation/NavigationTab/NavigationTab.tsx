@@ -5,11 +5,17 @@ export interface INavigationTabProps {
     title: string;
     current: boolean;
     setActive: () => void;
+
+    disabled?: boolean;
 }
 
-const NavigationTab: React.FunctionComponent<INavigationTabProps> = ({ setActive, current, title }) => {
+const NavigationTab: React.FunctionComponent<INavigationTabProps> = ({ setActive, current, title, disabled }) => {
     return (
-        <button className={`navigation__tab navigation__tab--current-${current}`} onClick={setActive}>
+        <button
+            disabled={disabled}
+            className={`navigation__tab navigation__tab--current-${current} navigation__tab--disabled-${disabled ? "true" : "false"}`}
+            onClick={setActive}
+        >
             {title}
         </button>
     );

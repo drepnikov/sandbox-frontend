@@ -38,6 +38,7 @@ const AuthForm: React.FunctionComponent<IProps> = () => {
                     setActive={() => {
                         setActiveTab(tabs.signup);
                     }}
+                    disabled
                 />
             </Navigation>
 

@@ -1,25 +1,28 @@
+@import "src/core/styles/screens";
+
 .login-page {
     height: 100vh;
-    border: 1px solid red;
     background-color: #7abaff;
     overflow: hidden;
 }
 
 .login-page__form {
-    min-height: 50vh;
-    margin-top: 20px;
     border: 1px solid black;
     border-radius: 5%;
     padding: 10px 25px;
     background-color: pink;
-}
-@media(min-width: 576px) {
-    .login-page__form {
-        height: 300px;
-        margin-top: 0;
+    height: 50vh;
+    margin-top: 30px;
+
+    @media (min-width: $desktop) {
+        height: 250px;
+        width: 450px;
+
+        margin: 0 auto;
     }
 }
 
 .login-page__logo {
-    min-height: 50vh;
+    display: flex;
+    justify-content: center;
 }
