@@ -1,8 +1,6 @@
 import { useEffect, useState } from "react";
 import { AnimationsEnum } from "@Features/animations/types/AnimationsEnum";
 
-import "@Features/animations/styles/animations.scss";
-
 interface Params {
     type: AnimationsEnum;
 

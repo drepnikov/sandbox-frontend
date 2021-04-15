@@ -9,6 +9,8 @@ import { useEffect } from "react";
 interface IProps {}
 
 const App: React.FunctionComponent<IProps> = observer(() => {
+    //todo: В этом компоненте нужно реализовать запуск фичи цветовых тем
+
     const { sessionStore } = useStore();
 
     useEffect(() => {
@@ -23,7 +25,7 @@ const App: React.FunctionComponent<IProps> = observer(() => {
         }
     };
 
-    return getRouter();
+    return <main className={"Application"}>{getRouter()}</main>;
 });
 
 export { App };

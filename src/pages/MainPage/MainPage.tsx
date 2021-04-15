@@ -3,7 +3,7 @@ import * as React from "react";
 interface IProps {}
 
 const MainPage: React.FunctionComponent<IProps> = () => {
-    return <main>Я - главная страница</main>;
+    return <section>Я - главная страница</section>;
 };
 
 export { MainPage };

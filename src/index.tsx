@@ -3,13 +3,23 @@ import ReactDOM from "react-dom";
 import { App } from "@App/containers/App/App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
+
+// React-querry
 import { QueryClientProvider } from "react-query";
 import { queryClient } from "@App/queryClient";
 import { ReactQueryDevtools } from "react-query/devtools";
+
+// Store
 import { StoreContext } from "@Core/store/storeContext";
 import { store } from "@Core/store/store";
 
+// Сброс стилей
+import "@Core/styles/reseter.scss";
+
+// Основные стили для core и фичей
 import "@Core/styles/main.scss";
+import "@Features/animations/styles/main.scss";
+import "@Features/colorTheme/styles/main.scss";
 
 ReactDOM.render(
     <React.StrictMode>

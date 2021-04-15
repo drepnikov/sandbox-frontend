@@ -15,7 +15,7 @@ const LoginPage: React.FunctionComponent<IProps> = () => {
     const animation = useOnMountAnimation({ type: AnimationsEnum.showFromBottom });
 
     return (
-        <main className={"login-page"}>
+        <section className={"login-page"}>
             <Layout page={"login-page"}>
                 <LayoutItem>
                     <div className={"login-page__logo"}>
@@ -29,7 +29,7 @@ const LoginPage: React.FunctionComponent<IProps> = () => {
                     </div>
                 </LayoutItem>
             </Layout>
-        </main>
+        </section>
     );
 };
 
