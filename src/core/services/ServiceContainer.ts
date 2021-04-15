@@ -1,8 +1,8 @@
-import { config } from "@Config";
-import { AuthService } from "@Core/services/api/AuthService/AuthService";
-import { StorageService } from "@Core/services/browser/StorageService/StorageService";
-import { URLService } from "@Core/services/browser/URLService/URLService";
-import { Logger } from "@Core/services/utils/Logger/Logger";
+import { AuthService } from "./api/AuthService/AuthService";
+import { StorageService } from "./browser/StorageService/StorageService";
+import { URLService } from "./browser/URLService/URLService";
+import { Logger } from "./utils/Logger/Logger";
+import { config } from "@App/config";
 
 // browser
 const storageService = new StorageService(localStorage);

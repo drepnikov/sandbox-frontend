@@ -1,10 +1,11 @@
 import * as React from "react";
 import { FormEventHandler, useState } from "react";
-import { ServiceContainer } from "@ServiceContainer";
+
+import { useMutation } from "react-query";
+import { useStore } from "@Core/hooks/useStore";
+import { ServiceContainer } from "@Core/services/ServiceContainer";
 
 import "../AuthForm.scss";
-import { useMutation } from "react-query";
-import { useStore } from "@Shared/hooks/useStore";
 
 interface IProps {}
 

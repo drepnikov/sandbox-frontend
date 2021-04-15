@@ -1,15 +1,19 @@
 import * as React from "react";
+import { Layout } from "@Core/components/Layout/Layout";
+import { LayoutItem } from "@Core/components/Layout/LayoutItem/LayoutItem";
+import { AuthForm } from "@Core/containers/AuthForm/AuthForm";
 
-import { AuthForm } from "@Shared/containers/AuthForm/AuthForm";
-import { Layout } from "@Shared/components/Layout/Layout";
+import { useOnMountAnimation } from "@Features/animations/hooks/useOnMountAnimation";
+import { AnimationsEnum } from "@Features/animations/types/AnimationsEnum";
 
 import "./LoginPage.scss";
 import { ReactComponent as DocumentIcon } from "./assets/document.svg";
-import { LayoutItem } from "@Shared/components/Layout/LayoutItem/LayoutItem";
 
 interface IProps {}
 
 const LoginPage: React.FunctionComponent<IProps> = () => {
+    const animation = useOnMountAnimation({ type: AnimationsEnum.showFromBottom });
+
     return (
         <main className={"login-page"}>
             <Layout page={"login-page"}>
@@ -20,7 +24,7 @@ const LoginPage: React.FunctionComponent<IProps> = () => {
                 </LayoutItem>
 
                 <LayoutItem>
-                    <div className={"login-page__form"}>
+                    <div className={`login-page__form ${animation}`}>
                         <AuthForm />
                     </div>
                 </LayoutItem>

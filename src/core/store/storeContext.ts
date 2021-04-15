@@ -1,5 +1,5 @@
 import { createContext } from "react";
-import { store } from "@Store";
+import { store } from "@Core/store/store";
 
 const StoreContext = createContext(store);
 

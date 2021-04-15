@@ -1,4 +1,4 @@
-import { _RequestService } from "@Core/services/api/_RequestService/_RequestService";
+import { _RequestService } from "../_RequestService/_RequestService";
 
 export interface ILoginParams {
     password: string;

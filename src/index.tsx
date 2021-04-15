@@ -1,13 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { App } from "./application/containers/App/App";
+import { App } from "@App/containers/App/App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
 import { QueryClientProvider } from "react-query";
-import { queryClient } from "./application/init/queryClient";
+import { queryClient } from "@App/queryClient";
 import { ReactQueryDevtools } from "react-query/devtools";
-import { store } from "@Store";
 import { StoreContext } from "@Core/store/storeContext";
+import { store } from "@Core/store/store";
 
 import "@Core/styles/main.scss";
 

@@ -1,4 +1,4 @@
-import { ILoginResponse } from "@Core/services/api/AuthService/AuthService";
+import { ILoginResponse } from "../../api/AuthService/AuthService";
 
 export interface IStorageService {
     getUserSessionInfo: () => ILoginResponse | null;

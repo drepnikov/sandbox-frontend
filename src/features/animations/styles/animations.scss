@@ -1,0 +1,9 @@
+.animation__show-from-bottom {
+    position: relative;
+    bottom: -500px;
+}
+
+.animation__show-from-bottom--init {
+    bottom: 0;
+    transition: bottom 1s;
+}

@@ -1,6 +1,7 @@
+import { action, makeObservable, observable } from "mobx";
+
 import { ILoginResponse } from "@Core/services/api/AuthService/AuthService";
 import { ServiceContainer } from "@Core/services/ServiceContainer";
-import { action, makeObservable, observable } from "mobx";
 
 const { storageService } = ServiceContainer;
 

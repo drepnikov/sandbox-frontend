@@ -2,10 +2,10 @@ import * as React from "react";
 import { useState } from "react";
 
 import "./AuthForm.scss";
-import { Navigation } from "@Shared/containers/Navigation/Navigation";
-import { NavigationTab } from "@Shared/containers/Navigation/NavigationTab/NavigationTab";
-import { SigninForm } from "@Shared/containers/AuthForm/SigninForm/SigninForm";
-import { SignupForm } from "@Shared/containers/AuthForm/SignupForm/SignupForm";
+import { Navigation } from "../Navigation/Navigation";
+import { NavigationTab } from "../Navigation/NavigationTab/NavigationTab";
+import { SigninForm } from "./SigninForm/SigninForm";
+import { SignupForm } from "./SignupForm/SignupForm";
 
 interface IProps {}
 

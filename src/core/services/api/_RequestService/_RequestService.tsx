@@ -1,6 +1,6 @@
-import { IStorageService } from "@Core/services/browser/StorageService/StorageService";
-import { Config } from "@Config";
-import { ILogger } from "@Core/services/utils/Logger/Logger";
+import { IStorageService } from "../../browser/StorageService/StorageService";
+import { ILogger } from "../../utils/Logger/Logger";
+import { Config } from "@App/config";
 
 class _RequestService {
     constructor(protected config: Config, private _storageService: IStorageService, private _logger: ILogger) {}

@@ -1,6 +1,6 @@
 import * as React from "react";
 import { FormEventHandler } from "react";
-import { useStore } from "@Shared/hooks/useStore";
+import { useStore } from "@Core/hooks/useStore";
 
 import "../AuthForm.scss";
 
