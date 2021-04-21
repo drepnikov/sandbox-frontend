@@ -10,7 +10,8 @@
     grid-template-rows: 1fr 1fr;
     align-items: center;
 
-    .grid-item {}
+    .grid-item {
+    }
 
     @media (min-width: $desktop) {
         grid-template-rows: none;
