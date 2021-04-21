@@ -18,7 +18,8 @@ const App: React.FunctionComponent<IProps> = observer(() => {
     }, [sessionStore]);
 
     const getRouter = () => {
-        if (sessionStore.isAuthenticated) {
+        // Если нужна автризация, меняем проверку условия на sessionStore.isAuthenticated
+        if (true) {
             return <UserRouter />;
         } else {
             return <GuestRouter />;

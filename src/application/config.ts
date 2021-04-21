@@ -2,6 +2,7 @@ export class Config {
     readonly ROUTE_PATHS = Object.freeze({
         main: "/",
         login: "/login",
+        showcase: "/showcase",
     });
 
     readonly API = Object.freeze({
