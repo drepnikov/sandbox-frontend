@@ -1,7 +1,10 @@
 export class Config {
     readonly ROUTE_PATHS = Object.freeze({
         main: "/",
-        login: "/login",
+
+        authSignin: "/auth/signin",
+        authSignup: "/auth/signup",
+
         showcase: "/showcase",
     });
 

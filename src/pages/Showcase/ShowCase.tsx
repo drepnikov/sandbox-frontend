@@ -1,12 +1,15 @@
 import * as React from "react";
-import { ExpandingCards } from "@Core/components/ExpandingCards/ExpandingCards";
 
 // ExpandingCards
-import eva1 from "./assets/ExpandingCards/eva_1.jpg";
-import eva2 from "./assets/ExpandingCards/eva_2.jpg";
-import eva3 from "./assets/ExpandingCards/eva_3.jpg";
-import eva4 from "./assets/ExpandingCards/eva_4.jpg";
-import eva5 from "./assets/ExpandingCards/eva_5.jpg";
+import { ExpandingCards } from "@Core/components/ExpandingCards/ExpandingCards";
+import eva1 from "./assets/eva_1.jpg";
+import eva2 from "./assets/eva_2.jpg";
+import eva3 from "./assets/eva_3.jpg";
+import eva4 from "./assets/eva_4.jpg";
+import eva5 from "./assets/eva_5.jpg";
+
+// Progress Stepper
+import { ProgressStepper } from "@Core/components/ProgressStepper/ProgressStepper";
 
 const ExpandingCardsItems = [
     { title: "Eva on the kitchen", src: eva1 },
@@ -18,8 +21,13 @@ const ExpandingCardsItems = [
 
 interface IProps {}
 
-const ShowCase: React.FunctionComponent<IProps> = () => {
-    return <ExpandingCards height={"450px"} items={ExpandingCardsItems} />;
+const Showcase: React.FunctionComponent<IProps> = () => {
+    return (
+        <>
+            <ExpandingCards height={"450px"} items={ExpandingCardsItems} />;
+            <ProgressStepper />
+        </>
+    );
 };
 
-export { ShowCase };
+export { Showcase };

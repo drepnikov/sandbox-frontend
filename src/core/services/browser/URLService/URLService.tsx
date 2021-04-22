@@ -1,11 +1,21 @@
 export interface IURLService {
-  getSearchParamsStringFromObj: (obj: { [key: string]: any }) => string;
+    searchParamsFromObjToString: (obj: { [key: string]: any }) => string;
+    searchParamsFromStringToObject: <T>(url: string) => T;
+    clearURLFromSearchParams: (url: string) => string;
 }
 
 class URLService implements IURLService {
-  getSearchParamsStringFromObj(obj: { [p: string]: any }): string {
-    return new URLSearchParams(obj).toString();
-  }
+    searchParamsFromObjToString(obj: { [p: string]: any }): string {
+        return new URLSearchParams(obj).toString();
+    }
+
+    searchParamsFromStringToObject<T>(url: string): T {
+        return (Object.fromEntries(new URLSearchParams(url)) as unknown) as T;
+    }
+
+    clearURLFromSearchParams(url: string) {
+        return url.split("?")[0];
+    }
 }
 
 export { URLService };

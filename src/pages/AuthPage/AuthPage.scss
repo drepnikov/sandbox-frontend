@@ -1,12 +1,12 @@
 @import "../../core/styles/screens";
 
-.login-page {
+.auth-page {
     height: 100vh;
     background-color: #7abaff;
     overflow: hidden;
 }
 
-.login-page__form {
+.auth-page__form {
     border: 1px solid black;
     border-radius: 5%;
     padding: 10px 25px;
@@ -22,7 +22,7 @@
     }
 }
 
-.login-page__logo {
+.auth-page__logo {
     display: flex;
     justify-content: center;
 }

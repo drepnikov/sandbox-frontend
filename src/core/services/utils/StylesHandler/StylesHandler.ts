@@ -1,12 +1,16 @@
-interface ClassNames {
+export interface IStylesService {
+    getClassName: (main: string, params?: Params) => string;
+}
+
+interface Params {
     disabled?: boolean;
     current?: boolean;
     modifier?: string;
     additionalClassName?: string;
 }
 
-class StylesHandler {
-    getClassName(main: string, { disabled, current, modifier, additionalClassName }: ClassNames = {}) {
+class StylesHandler implements IStylesService {
+    getClassName(main: string, { disabled, current, modifier, additionalClassName }: Params = {}) {
         let className = main;
 
         if (disabled) className += ` ${className}--disabled`;

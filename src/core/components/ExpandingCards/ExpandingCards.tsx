@@ -29,7 +29,7 @@ const ExpandingCards: React.FC<IProps> = ({ height, items }) => {
     return (
         <div style={{ height }} className={classNames.block}>
             {items.map((itemProps, i) => {
-                return <ExpandingItem {...itemProps} onClick={getOnClickHandler(i)} current={isCurrent(i)} />;
+                return <ExpandingItem {...itemProps} onClick={getOnClickHandler(i)} current={isCurrent(i)} key={i} />;
             })}
         </div>
     );

@@ -6,7 +6,7 @@ export interface ILoginParams {
 }
 
 export interface IAuthService {
-    login: (params: ILoginParams) => Promise<ILoginResponse | null>;
+    login: (params: ILoginParams) => Promise<ILoginResponse>;
     logout: () => Promise<boolean>;
 }
 
