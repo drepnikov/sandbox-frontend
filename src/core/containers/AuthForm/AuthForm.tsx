@@ -26,7 +26,7 @@ const AuthForm: React.FunctionComponent<IProps> = () => {
         <div className={classNames.block}>
             <Navigation className={classNames.navigationElement}>
                 <NavigationTab to={config.ROUTE_PATHS.authSignin} title={tabs.signin} />
-                <NavigationTab to={config.ROUTE_PATHS.authSignup} title={tabs.signup} />
+                <NavigationTab to={config.ROUTE_PATHS.authSignup} title={tabs.signup} disabled />
             </Navigation>
 
             <Switch>

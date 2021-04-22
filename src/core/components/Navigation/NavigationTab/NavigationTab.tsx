@@ -23,7 +23,13 @@ const NavigationTab: React.FunctionComponent<INavigationTabProps> = ({ title, di
         navigationTabElement: stylesHandler.getClassName("navigation__tab", { current, disabled }),
     };
 
-    return <div className={classNames.navigationTabElement}>{to ? <Link to={to}>{title}</Link> : title}</div>;
+    return disabled ? (
+        <a className={classNames.navigationTabElement}>{title}</a>
+    ) : (
+        <Link className={classNames.navigationTabElement} to={to}>
+            {title}
+        </Link>
+    );
 };
 
 export { NavigationTab };
