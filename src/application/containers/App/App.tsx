@@ -5,6 +5,7 @@ import { GuestRouter } from "@Core/containers/Routers/GuestRouter";
 
 import { useStore } from "@Core/hooks/useStore";
 import { useEffect } from "react";
+
 import { ServiceContainer } from "@Core/services/ServiceContainer";
 const { stylesHandler } = ServiceContainer;
 
@@ -23,8 +24,9 @@ const App: React.FunctionComponent<IProps> = observer(() => {
     }, [sessionStore]);
 
     const getRouter = () => {
-        // Если нужна автризация, меняем проверку условия на sessionStore.isAuthenticated
-        if (true) {
+        if (sessionStore.isAuthenticated === undefined) return null;
+
+        if (sessionStore.isAuthenticated) {
             return <UserRouter />;
         } else {
             return <GuestRouter />;

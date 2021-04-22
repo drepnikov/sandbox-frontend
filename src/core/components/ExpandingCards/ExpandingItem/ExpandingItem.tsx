@@ -14,11 +14,12 @@ export interface IExpandingItemProps {
 const ExpandingItem: React.FC<IExpandingItemProps> = ({ title, src, current, onClick }) => {
     const classNames = {
         itemBlock: stylesHandler.getClassName("expanding-item", { current }),
+        itemTitle: stylesHandler.getClassName("expanding-item__title"),
     };
 
     return (
         <div onClick={onClick} className={classNames.itemBlock} style={{ backgroundImage: `url(${src})` }}>
-            <h3 className={"expanding-item__title"}>{title}</h3>
+            <h3 className={classNames.itemTitle}>{title}</h3>
         </div>
     );
 };

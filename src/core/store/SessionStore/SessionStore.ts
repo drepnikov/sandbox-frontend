@@ -6,7 +6,7 @@ import { ServiceContainer } from "@Core/services/ServiceContainer";
 const { storageService } = ServiceContainer;
 
 class SessionStore {
-    isAuthenticated: boolean = false;
+    isAuthenticated: boolean | undefined = undefined;
 
     constructor() {
         makeObservable(this, {
@@ -22,6 +22,8 @@ class SessionStore {
 
         if (token) {
             this.isAuthenticated = true;
+        } else {
+            this.isAuthenticated = false;
         }
     };
 
