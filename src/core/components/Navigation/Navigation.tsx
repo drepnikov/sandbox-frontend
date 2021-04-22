@@ -1,17 +1,19 @@
 import * as React from "react";
 
 import "./Navigation.scss";
+import { ServiceContainer } from "@Core/services/ServiceContainer";
+const { stylesHandler } = ServiceContainer;
 
 interface IProps {
     className?: string;
 }
 
 const Navigation: React.FunctionComponent<IProps> = ({ className, children }) => {
-    let style = "navigation";
+    const classNames = {
+        block: stylesHandler.getClassName("navigation", { additionalClassName: className }),
+    };
 
-    if (className) style += " " + className;
-
-    return <nav className={style}>{children}</nav>;
+    return <nav className={classNames.block}>{children}</nav>;
 };
 
 export { Navigation };

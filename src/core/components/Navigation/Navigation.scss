@@ -8,11 +8,11 @@
   border-bottom: 1px solid grey;
   margin-right: 3px;
 }
-.navigation__tab--current-true {
+.navigation__tab--current {
   border-bottom: 2px solid black;
 }
 
-.navigation__tab--disabled-true {
+.navigation__tab--disabled {
   cursor: initial;
   opacity: 50%;
 }

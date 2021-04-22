@@ -5,11 +5,16 @@ import { GuestRouter } from "@Core/containers/Routers/GuestRouter";
 
 import { useStore } from "@Core/hooks/useStore";
 import { useEffect } from "react";
+import { ServiceContainer } from "@Core/services/ServiceContainer";
+const { stylesHandler } = ServiceContainer;
 
 interface IProps {}
 
 const App: React.FunctionComponent<IProps> = observer(() => {
     //todo: В этом компоненте нужно реализовать запуск фичи цветовых тем
+    const classNames = {
+        block: stylesHandler.getClassName("Application"),
+    };
 
     const { sessionStore } = useStore();
 
@@ -26,7 +31,7 @@ const App: React.FunctionComponent<IProps> = observer(() => {
         }
     };
 
-    return <main className={"Application"}>{getRouter()}</main>;
+    return <main className={classNames.block}>{getRouter()}</main>;
 });
 
 export { App };

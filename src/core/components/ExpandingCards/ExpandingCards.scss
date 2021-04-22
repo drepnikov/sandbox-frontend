@@ -1,0 +1,33 @@
+.expanding-cards {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.expanding-item {
+    background-position: top;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 50px;
+    flex: 0.5;
+    margin: 10px;
+    position: relative;
+    cursor: pointer;
+    transition: flex 0.7s ease-in;
+
+    .expanding-item__title {
+        position: absolute;
+        bottom: 20px;
+        left: 20px;
+        opacity: 0;
+    }
+}
+
+.expanding-item--current {
+    flex: 5;
+
+    .expanding-item__title {
+        opacity: 1;
+        transition: opacity 0.3s ease-in 0.6s;
+    }
+}

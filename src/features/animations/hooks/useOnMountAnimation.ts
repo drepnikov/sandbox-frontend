@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import { AnimationsEnum } from "@Features/animations/types/AnimationsEnum";
+import { ServiceContainer } from "@Core/services/ServiceContainer";
+const { stylesHandler } = ServiceContainer;
 
 interface Params {
     type: AnimationsEnum;
@@ -8,13 +10,13 @@ interface Params {
 }
 
 const useOnMountAnimation = ({ type, startDelay = 100 }: Params) => {
-    let initialClassName: string = `animation__${type}`;
+    const initialClassName = stylesHandler.getClassName(`animation__${type}`);
 
     const [className, setClassName] = useState(initialClassName);
 
     useEffect(() => {
         const timeoutId = setTimeout(() => {
-            setClassName((current) => `${current} ${current}--init`);
+            setClassName((current) => stylesHandler.getClassName(current, { modifier: "init" }));
         }, startDelay);
 
         return () => {

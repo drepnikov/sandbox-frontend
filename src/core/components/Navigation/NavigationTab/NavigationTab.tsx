@@ -1,6 +1,9 @@
 import * as React from "react";
 import "../Navigation.scss";
 
+import { ServiceContainer } from "@Core/services/ServiceContainer";
+const { stylesHandler } = ServiceContainer;
+
 export interface INavigationTabProps {
     title: string;
     current: boolean;
@@ -10,12 +13,12 @@ export interface INavigationTabProps {
 }
 
 const NavigationTab: React.FunctionComponent<INavigationTabProps> = ({ setActive, current, title, disabled }) => {
+    const classNames = {
+        navigationTabElement: stylesHandler.getClassName("navigation__tab", { current, disabled }),
+    };
+
     return (
-        <button
-            disabled={disabled}
-            className={`navigation__tab navigation__tab--current-${current} navigation__tab--disabled-${disabled ? "true" : "false"}`}
-            onClick={setActive}
-        >
+        <button disabled={disabled} className={classNames.navigationTabElement} onClick={setActive}>
             {title}
         </button>
     );

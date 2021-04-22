@@ -8,23 +8,31 @@ import { AnimationsEnum } from "@Features/animations/types/AnimationsEnum";
 
 import "./LoginPage.scss";
 import { ReactComponent as DocumentIcon } from "./assets/document.svg";
+import { ServiceContainer } from "@Core/services/ServiceContainer";
+const { stylesHandler } = ServiceContainer;
 
 interface IProps {}
 
 const LoginPage: React.FunctionComponent<IProps> = () => {
     const animation = useOnMountAnimation({ type: AnimationsEnum.showFromBottom });
 
+    const classNames = {
+        loginPageBlock: stylesHandler.getClassName("login-page"),
+        logoElement: stylesHandler.getClassName("login-page__logo"),
+        formElement: stylesHandler.getClassName("login-page__form", { additionalClassName: animation }),
+    };
+
     return (
-        <section className={"login-page"}>
+        <section className={classNames.loginPageBlock}>
             <Layout page={"login-page"}>
                 <LayoutItem>
-                    <div className={"login-page__logo"}>
+                    <div className={classNames.logoElement}>
                         <DocumentIcon height={300} width={200} />
                     </div>
                 </LayoutItem>
 
                 <LayoutItem>
-                    <div className={`login-page__form ${animation}`}>
+                    <div className={classNames.formElement}>
                         <AuthForm />
                     </div>
                 </LayoutItem>
