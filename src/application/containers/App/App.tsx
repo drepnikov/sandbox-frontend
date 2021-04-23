@@ -33,7 +33,7 @@ const App: React.FunctionComponent<IProps> = observer(() => {
         }
     };
 
-    return <main className={classNames.block}>{getRouter()}</main>;
+    return <div className={classNames.block}>{getRouter()}</div>;
 });
 
 export { App };

@@ -14,12 +14,13 @@
     position: relative;
     cursor: pointer;
     transition: flex 0.7s ease-in;
+    overflow: hidden;
 
     .expanding-item__title {
         position: absolute;
         bottom: 20px;
         left: 20px;
-        display: none;
+        opacity: 0;
     }
 }
 
@@ -27,7 +28,7 @@
     flex: 5;
 
     .expanding-item__title {
-        display: block;
+        opacity: 1;
         transition: opacity 0.3s ease-in 0.6s;
     }
 }

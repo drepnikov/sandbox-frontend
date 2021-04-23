@@ -1,9 +1,14 @@
-.collapsed-panel {
+.collapsed-panel-container {
     position: fixed;
     top: 0;
-    background: dimgrey;
-    width: 100%;
     z-index: 1;
+    width: 100%;
+    background: dimgrey;
+}
+
+.collapsed-panel {
+    transition: height 1s ease-in-out;
+    overflow: hidden;
 
     .arrow-icon {
         position: absolute;
@@ -11,13 +16,17 @@
         height: 40px;
         right: 25px;
     }
+
+    .collapsed-panel__content {
+        transition: opacity 1.5s ease-in-out;
+    }
 }
 
 .collapsed-panel--off {
     height: 30px;
 
     .collapsed-panel__content {
-        display: none;
+        opacity: 0;
     }
 
     .arrow-icon {
@@ -27,6 +36,10 @@
 
 .collapsed-panel--on {
     height: 100vh;
+
+    .collapsed-panel__content {
+        opacity: 1;
+    }
 
     .arrow-icon {
         bottom: 10px;

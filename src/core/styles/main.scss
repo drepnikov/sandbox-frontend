@@ -2,9 +2,16 @@
 // Например, размер шрифта в зависимости от экрана девайса?
 
 .Application {
-
 }
 
+// todo: стилизацию контента, лучше вынести в layout
 .Application--user {
-  padding-top: 30px;
+    .content {
+      padding: 30px 5px;
+    }
+}
+
+.Application--guest {
+    .content {
+    }
 }

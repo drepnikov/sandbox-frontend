@@ -25,6 +25,8 @@ const Showcase: React.FunctionComponent<IProps> = () => {
     return (
         <>
             <ExpandingCards height={"450px"} items={ExpandingCardsItems} />;
+            <ExpandingCards height={"450px"} items={ExpandingCardsItems} />;
+            <ExpandingCards height={"450px"} items={ExpandingCardsItems} />;
             <ProgressStepper />
         </>
     );

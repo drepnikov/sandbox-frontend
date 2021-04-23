@@ -22,7 +22,7 @@ const AuthPage: React.FunctionComponent<IProps> = () => {
     };
 
     return (
-        <section className={classNames.loginPageBlock}>
+        <div className={classNames.loginPageBlock}>
             <Layout page={"auth-page"}>
                 <LayoutItem>
                     <div className={classNames.logoElement}>
@@ -36,7 +36,7 @@ const AuthPage: React.FunctionComponent<IProps> = () => {
                     </div>
                 </LayoutItem>
             </Layout>
-        </section>
+        </div>
     );
 };
 
