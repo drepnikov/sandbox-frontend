@@ -12,20 +12,20 @@ const { stylesHandler } = ServiceContainer;
 interface IProps {}
 
 const App: React.FunctionComponent<IProps> = observer(() => {
-    //todo: В этом компоненте нужно реализовать запуск фичи цветовых тем
-    const classNames = {
-        block: stylesHandler.getClassName("Application"),
-    };
-
     const { sessionStore } = useStore();
 
     useEffect(() => {
         sessionStore.recoverSession();
     }, [sessionStore]);
 
-    const getRouter = () => {
-        if (sessionStore.isAuthenticated === undefined) return null;
+    if (sessionStore.isAuthenticated === undefined) return null;
 
+    //todo: В этом компоненте нужно реализовать запуск фичи цветовых тем
+    const classNames = {
+        block: stylesHandler.getClassName("Application", { modifier: sessionStore.isAuthenticated ? "user" : "guest" }),
+    };
+
+    const getRouter = () => {
         if (sessionStore.isAuthenticated) {
             return <UserRouter />;
         } else {

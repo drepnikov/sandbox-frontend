@@ -16,7 +16,7 @@ const useOnMountAnimation = ({ type, startDelay = 100 }: Params) => {
 
     useEffect(() => {
         const timeoutId = setTimeout(() => {
-            setClassName((current) => stylesHandler.getClassName(current, { modifier: "init" }));
+            setClassName((current) => stylesHandler.getClassName(current, { modifier: "started" }));
         }, startDelay);
 
         return () => {

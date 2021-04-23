@@ -5,16 +5,24 @@ export interface IStylesService {
 interface Params {
     disabled?: boolean;
     current?: boolean;
+    isOn?: boolean;
     modifier?: string;
     additionalClassName?: string;
 }
 
 class StylesHandler implements IStylesService {
-    getClassName(main: string, { disabled, current, modifier, additionalClassName }: Params = {}) {
+    getClassName(main: string, { disabled, current, modifier, additionalClassName, isOn }: Params = {}) {
         let className = main;
 
         if (disabled) className += ` ${className}--disabled`;
         if (current) className += ` ${className}--current`;
+
+        if (isOn) {
+            className += ` ${className}--on`;
+        } else if (isOn === false) {
+            className += ` ${className}--off`;
+        }
+
         if (modifier) className += ` ${className}--${modifier}`;
 
         if (additionalClassName) className += ` ${additionalClassName}`;

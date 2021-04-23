@@ -6,14 +6,13 @@
     padding: 12px;
     text-decoration: none;
     color: inherit;
-    border-bottom: 1px solid grey;
     margin-right: 3px;
-}
-.navigation__tab--current {
-    border-bottom: 2px solid black;
+    width: 120px;
+    text-align: center;
 }
 
 .navigation__tab--disabled {
     cursor: default;
+    text-decoration: line-through;
     opacity: 50%;
 }

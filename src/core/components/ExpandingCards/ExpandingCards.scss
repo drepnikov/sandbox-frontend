@@ -19,7 +19,7 @@
         position: absolute;
         bottom: 20px;
         left: 20px;
-        opacity: 0;
+        display: none;
     }
 }
 
@@ -27,7 +27,7 @@
     flex: 5;
 
     .expanding-item__title {
-        opacity: 1;
+        display: block;
         transition: opacity 0.3s ease-in 0.6s;
     }
 }
