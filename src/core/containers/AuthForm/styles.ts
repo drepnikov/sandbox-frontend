@@ -1,17 +1,17 @@
 import styled from "@emotion/styled";
 import { Navigation } from "@Core/components/Navigation/Navigation";
 
-export const DIV_MAIN_CONTAINER__AUTH_FORM = styled.div`
+export const MainContainer = styled.div`
     width: 100%;
 `;
 
-export const NAVIGATION__AUTH_FORM = styled(Navigation)`
+export const AuthNavigation = styled(Navigation)`
     margin-bottom: 10px;
 `;
 
-export const FORM__AUTH_FORM = styled.form``;
+export const Form = styled.form``;
 
-export const INPUT__AUTH_FORM = styled.input`
+export const Input = styled.input`
     display: block;
     width: 100%;
     margin-bottom: 10px;
@@ -25,7 +25,7 @@ export const INPUT__AUTH_FORM = styled.input`
     outline: none;
 `;
 
-export const SEND_BTN__AUTH_FORM = styled.button`
+export const SendBtn = styled.button`
     width: 100%;
 
     color: white;

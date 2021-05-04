@@ -4,7 +4,7 @@ import { FormEventHandler, useState } from "react";
 import { useMutation } from "react-query";
 import { useStore } from "@Core/hooks/useStore";
 
-import { FORM__AUTH_FORM, INPUT__AUTH_FORM, SEND_BTN__AUTH_FORM } from "../styles";
+import * as S from "../styles";
 
 import { ServiceContainer } from "@Core/services/ServiceContainer";
 const { authService } = ServiceContainer;
@@ -35,12 +35,12 @@ const SigninForm: React.FunctionComponent<IProps> = () => {
     };
 
     return (
-        <FORM__AUTH_FORM onSubmit={onSubmit}>
-            <INPUT__AUTH_FORM placeholder={"Логин"} onChange={(e) => setLogin(e.target.value)} value={login} type={"text"} />
-            <INPUT__AUTH_FORM placeholder={"Пароль"} onChange={(e) => setPassword(e.target.value)} value={password} type={"password"} />
+        <S.Form onSubmit={onSubmit}>
+            <S.Input placeholder={"Логин"} onChange={(e) => setLogin(e.target.value)} value={login} type={"text"} />
+            <S.Input placeholder={"Пароль"} onChange={(e) => setPassword(e.target.value)} value={password} type={"password"} />
 
-            <SEND_BTN__AUTH_FORM type={"submit"}>Отправить</SEND_BTN__AUTH_FORM>
-        </FORM__AUTH_FORM>
+            <S.SendBtn type={"submit"}>Отправить</S.SendBtn>
+        </S.Form>
     );
 };
 
