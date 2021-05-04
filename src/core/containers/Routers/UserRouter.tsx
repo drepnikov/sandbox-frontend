@@ -3,7 +3,7 @@ import { Switch, Route, Redirect } from "react-router-dom";
 import { MainPage } from "@Pages/MainPage/MainPage";
 import { config } from "@App/config";
 import { Showcase } from "@Pages/Showcase/Showcase";
-import { HeaderNavigation } from "@Core/components/HeaderNavigation/HeaderNavigation";
+import { Header } from "@Core/components/Header/Header";
 import { ServiceContainer } from "@Core/services/ServiceContainer";
 const { stylesHandler } = ServiceContainer;
 
@@ -18,7 +18,7 @@ const UserRouter: React.FunctionComponent<IProps> = () => {
 
     return (
         <>
-            <HeaderNavigation />
+            <Header />
 
             <main className={classNames.contentBlock}>
                 <Switch>

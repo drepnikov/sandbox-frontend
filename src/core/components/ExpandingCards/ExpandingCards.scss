@@ -6,14 +6,14 @@
 
 .expanding-item {
     background-position: top;
-    background-size: cover;
+    background-size: auto;
     background-repeat: no-repeat;
     border-radius: 50px;
     flex: 0.5;
     margin: 10px;
     position: relative;
     cursor: pointer;
-    transition: flex 0.7s ease-in;
+    transition: flex 0.7s ease-in, border-radius 0.7s ease-in;
     overflow: hidden;
 
     .expanding-item__title {
@@ -26,6 +26,7 @@
 
 .expanding-item--current {
     flex: 5;
+    border-radius: 0;
 
     .expanding-item__title {
         opacity: 1;

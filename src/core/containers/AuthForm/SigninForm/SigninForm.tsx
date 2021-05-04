@@ -3,19 +3,15 @@ import { FormEventHandler, useState } from "react";
 
 import { useMutation } from "react-query";
 import { useStore } from "@Core/hooks/useStore";
-import "../AuthForm.scss";
+
+import { FORM__AUTH_FORM, INPUT__AUTH_FORM, SEND_BTN__AUTH_FORM } from "../styles";
+
 import { ServiceContainer } from "@Core/services/ServiceContainer";
-const { authService, stylesHandler } = ServiceContainer;
+const { authService } = ServiceContainer;
 
 interface IProps {}
 
 const SigninForm: React.FunctionComponent<IProps> = () => {
-    const classNames = {
-        controlsBlock: stylesHandler.getClassName("signin-form-controls"),
-        inputElement: stylesHandler.getClassName("auth-form__input"),
-        btnElement: stylesHandler.getClassName("auth-form__btn"),
-    };
-
     const { sessionStore } = useStore();
 
     const [login, setLogin] = useState("");
@@ -39,20 +35,12 @@ const SigninForm: React.FunctionComponent<IProps> = () => {
     };
 
     return (
-        <form className={classNames.controlsBlock} onSubmit={onSubmit}>
-            <input placeholder={"Логин"} className={classNames.inputElement} onChange={(e) => setLogin(e.target.value)} value={login} type={"text"} />
-            <input
-                placeholder={"Пароль"}
-                className={classNames.inputElement}
-                onChange={(e) => setPassword(e.target.value)}
-                value={password}
-                type={"password"}
-            />
+        <FORM__AUTH_FORM onSubmit={onSubmit}>
+            <INPUT__AUTH_FORM placeholder={"Логин"} onChange={(e) => setLogin(e.target.value)} value={login} type={"text"} />
+            <INPUT__AUTH_FORM placeholder={"Пароль"} onChange={(e) => setPassword(e.target.value)} value={password} type={"password"} />
 
-            <button className={classNames.btnElement} type={"submit"}>
-                Отправить
-            </button>
-        </form>
+            <SEND_BTN__AUTH_FORM type={"submit"}>Отправить</SEND_BTN__AUTH_FORM>
+        </FORM__AUTH_FORM>
     );
 };
 

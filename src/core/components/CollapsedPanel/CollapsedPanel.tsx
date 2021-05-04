@@ -7,6 +7,23 @@ import { ReactComponent as ArrowUpIcon } from "@Core/components/CollapsedPanel/a
 import { ReactComponent as ArrowDownIcon } from "@Core/components/CollapsedPanel/assets/arrowDown.svg";
 const { stylesHandler } = ServiceContainer;
 
+/*
+    Пример использования:
+
+    <CollapsedPanel isOpen={isOpen} toggleOpen={toggleOpen}>
+        <Navigation className={classNames.headerNavigationBlock}>
+            <NavigationTab onClick={toggleOpen} title={"Главная"} to={ROUTE_PATHS.main} />
+            <NavigationTab onClick={toggleOpen} title={"Заглушка 1"} to={ROUTE_PATHS.showcase} disabled />
+            <NavigationTab onClick={toggleOpen} title={"Заглушка 2"} to={ROUTE_PATHS.showcase} disabled />
+            <NavigationTab onClick={toggleOpen} title={"Заглушка 3"} to={ROUTE_PATHS.showcase} disabled />
+            <NavigationTab onClick={toggleOpen} title={"Заглушка 4"} to={ROUTE_PATHS.showcase} disabled />
+            <NavigationTab onClick={toggleOpen} title={"Заглушка 5"} to={ROUTE_PATHS.showcase} disabled />
+            <NavigationTab onClick={toggleOpen} title={"Заглушка 6"} to={ROUTE_PATHS.showcase} disabled />
+            <NavigationTab onClick={toggleOpen} title={"Витрина"} to={ROUTE_PATHS.showcase} />
+        </Navigation>
+    </CollapsedPanel>
+ */
+
 interface IProps {
     isOpen: boolean;
     toggleOpen: () => void;

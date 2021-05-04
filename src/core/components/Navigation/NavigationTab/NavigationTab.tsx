@@ -13,6 +13,7 @@ export interface INavigationTabProps {
 
     onClick?: MouseEventHandler;
     disabled?: boolean;
+    icon?: React.FC;
 }
 
 const NavigationTab: React.FunctionComponent<INavigationTabProps> = ({ title, onClick, disabled, to }) => {

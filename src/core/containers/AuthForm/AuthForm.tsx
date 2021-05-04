@@ -1,13 +1,10 @@
 import * as React from "react";
-import { Navigation } from "@Core/components/Navigation/Navigation";
 import { NavigationTab } from "@Core/components/Navigation/NavigationTab/NavigationTab";
 import { SigninForm } from "./SigninForm/SigninForm";
 import { SignupForm } from "./SignupForm/SignupForm";
-import "./AuthForm.scss";
-import { ServiceContainer } from "@Core/services/ServiceContainer";
 import { config } from "@App/config";
 import { Route, Switch } from "react-router-dom";
-const { stylesHandler } = ServiceContainer;
+import { DIV_MAIN_CONTAINER__AUTH_FORM, NAVIGATION__AUTH_FORM } from "./styles";
 
 interface IProps {}
 
@@ -17,23 +14,18 @@ const tabs = Object.freeze({
 });
 
 const AuthForm: React.FunctionComponent<IProps> = () => {
-    const classNames = {
-        block: stylesHandler.getClassName("auth-form"),
-        navigationElement: stylesHandler.getClassName("auth-form__nav"),
-    };
-
     return (
-        <div className={classNames.block}>
-            <Navigation className={classNames.navigationElement}>
+        <DIV_MAIN_CONTAINER__AUTH_FORM>
+            <NAVIGATION__AUTH_FORM>
                 <NavigationTab to={config.ROUTE_PATHS.authSignin} title={tabs.signin} />
                 <NavigationTab to={config.ROUTE_PATHS.authSignup} title={tabs.signup} disabled />
-            </Navigation>
+            </NAVIGATION__AUTH_FORM>
 
             <Switch>
                 <Route path={config.ROUTE_PATHS.authSignin} component={SigninForm} />
                 <Route path={config.ROUTE_PATHS.authSignup} component={SignupForm} />
             </Switch>
-        </div>
+        </DIV_MAIN_CONTAINER__AUTH_FORM>
     );
 };
 

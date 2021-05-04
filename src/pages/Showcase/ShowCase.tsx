@@ -1,4 +1,5 @@
 import * as React from "react";
+import "./Showcase.scss";
 
 // ExpandingCards
 import { ExpandingCards } from "@Core/components/ExpandingCards/ExpandingCards";
@@ -11,6 +12,9 @@ import eva5 from "./assets/eva_5.jpg";
 // Progress Stepper
 import { ProgressStepper } from "@Core/components/ProgressStepper/ProgressStepper";
 
+import { ServiceContainer } from "@Core/services/ServiceContainer";
+const { stylesHandler } = ServiceContainer;
+
 const ExpandingCardsItems = [
     { title: "Eva on the kitchen", src: eva1 },
     { title: "Eva sees something", src: eva2 },
@@ -22,14 +26,11 @@ const ExpandingCardsItems = [
 interface IProps {}
 
 const Showcase: React.FunctionComponent<IProps> = () => {
-    return (
-        <>
-            <ExpandingCards height={"450px"} items={ExpandingCardsItems} />;
-            <ExpandingCards height={"450px"} items={ExpandingCardsItems} />;
-            <ExpandingCards height={"450px"} items={ExpandingCardsItems} />;
-            <ProgressStepper />
-        </>
-    );
+    const classNames = {
+        showcasePageBlock: stylesHandler.getClassName("showcase-page"),
+    };
+
+    return null;
 };
 
 export { Showcase };
