@@ -1,7 +1,7 @@
 import * as React from "react";
 import { observer } from "mobx-react-lite";
-import { UserRouter } from "@Core/containers/Routers/UserRouter";
-import { GuestRouter } from "@Core/containers/Routers/GuestRouter";
+import { UserRouter } from "@Core/components/logical/Routers/UserRouter";
+import { GuestRouter } from "@Core/components/logical/Routers/GuestRouter";
 
 import { useStore } from "@Core/hooks/useStore";
 import { useEffect } from "react";

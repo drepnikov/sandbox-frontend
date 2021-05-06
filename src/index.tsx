@@ -2,7 +2,7 @@ import "react-app-polyfill/stable";
 
 import React from "react";
 import ReactDOM from "react-dom";
-import { App } from "@App/containers/App/App";
+import { App } from "@App/components/logical/App/App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
 
