@@ -1,10 +1,10 @@
 import * as React from "react";
-import { NavigationTab } from "@Core/components/Navigation/NavigationTab/NavigationTab";
 import { SigninForm } from "./SigninForm/SigninForm";
 import { SignupForm } from "./SignupForm/SignupForm";
 import { config } from "@App/config";
 import { Route, Switch } from "react-router-dom";
 import * as S from "./styles";
+import { NavigationTab } from "@Core/components/smart/Navigation/NavigationTab/NavigationTab";
 
 interface IProps {}
 

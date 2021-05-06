@@ -3,8 +3,8 @@ import { Switch, Route, Redirect } from "react-router-dom";
 import { MainPage } from "@Pages/MainPage/MainPage";
 import { config } from "@App/config";
 import { Showcase } from "@Pages/Showcase/Showcase";
-import { Header } from "@Core/components/Header/Header";
 import { ServiceContainer } from "@Core/services/ServiceContainer";
+import { Header } from "@Core/components/smart/Header/Header";
 const { stylesHandler } = ServiceContainer;
 
 interface IProps {}

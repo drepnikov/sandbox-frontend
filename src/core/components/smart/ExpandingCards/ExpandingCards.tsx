@@ -1,9 +1,9 @@
 import * as React from "react";
 import "./ExpandingCards.scss";
-import { ExpandingItem } from "@Core/components/ExpandingCards/ExpandingItem/ExpandingItem";
 import { useCurrentItem } from "@Core/hooks/useCurrentItem";
 import { MouseEventHandler } from "react";
 import { ServiceContainer } from "@Core/services/ServiceContainer";
+import { ExpandingItem } from "@Core/components/smart/ExpandingCards/ExpandingItem/ExpandingItem";
 const { stylesHandler } = ServiceContainer;
 
 interface IProps {

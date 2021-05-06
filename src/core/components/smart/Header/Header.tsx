@@ -1,11 +1,11 @@
 import * as React from "react";
 import { config } from "@App/config";
 import { ReactComponent as HeaderLogo } from "./assets/logo.svg";
-import { NavigationTab } from "@Core/components/Navigation/NavigationTab/NavigationTab";
-import { Navigation } from "@Core/components/Navigation/Navigation";
 import { ServiceContainer } from "@Core/services/ServiceContainer";
 import "./Header.scss";
 import { useToggle } from "@Core/hooks/useToggle";
+import { NavigationTab } from "@Core/components/smart/Navigation/NavigationTab/NavigationTab";
+import { Navigation } from "@Core/components/smart/Navigation/Navigation";
 
 const { stylesHandler } = ServiceContainer;
 

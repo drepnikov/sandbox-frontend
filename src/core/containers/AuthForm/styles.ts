@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { Navigation } from "@Core/components/Navigation/Navigation";
+import { Navigation } from "@Core/components/smart/Navigation/Navigation";
 
 export const MainContainer = styled.div`
     width: 100%;
