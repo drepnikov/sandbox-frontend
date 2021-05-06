@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 import background from "./assets/background.jpg";
 
-export const MainContainer = styled.div`
+export const StyledAuthPageContainer = styled.div`
     max-height: 100vh;
     overflow: hidden;
     display: grid;
@@ -16,7 +16,7 @@ export const MainContainer = styled.div`
     }
 `;
 
-export const FormContainer = styled.div`
+export const StyledFormContainer = styled.div`
     border-radius: 5%;
     padding: 10px 25px;
     background-color: rgba(66, 66, 66, 0.55);
@@ -34,7 +34,7 @@ export const FormContainer = styled.div`
     }
 `;
 
-export const InfoBlockContainer = styled.div`
+export const StyledInfoBlockContainer = styled.div`
     background-image: url(${background});
     background-position: bottom;
     background-size: cover;

@@ -13,9 +13,9 @@ const SignupForm: React.FunctionComponent<IProps> = () => {
     };
 
     return (
-        <S.Form onSubmit={onSubmit}>
-            <S.SendBtn type={"submit"}>Отправить</S.SendBtn>
-        </S.Form>
+        <S.StyledForm onSubmit={onSubmit}>
+            <S.StyledSendBtn type={"submit"}>Отправить</S.StyledSendBtn>
+        </S.StyledForm>
     );
 };
 

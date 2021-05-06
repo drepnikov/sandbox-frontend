@@ -15,17 +15,17 @@ const tabs = Object.freeze({
 
 const AuthForm: React.FunctionComponent<IProps> = () => {
     return (
-        <S.MainContainer>
-            <S.AuthNavigation>
+        <S.StyledAuthFormContainer>
+            <S.StyledAuthNavigation>
                 <NavigationTab to={config.ROUTE_PATHS.authSignin} title={tabs.signin} />
                 <NavigationTab to={config.ROUTE_PATHS.authSignup} title={tabs.signup} disabled />
-            </S.AuthNavigation>
+            </S.StyledAuthNavigation>
 
             <Switch>
                 <Route path={config.ROUTE_PATHS.authSignin} component={SigninForm} />
                 <Route path={config.ROUTE_PATHS.authSignup} component={SignupForm} />
             </Switch>
-        </S.MainContainer>
+        </S.StyledAuthFormContainer>
     );
 };
 

@@ -7,6 +7,7 @@ import { useStore } from "@Core/hooks/useStore";
 import * as S from "../styles";
 
 import { ServiceContainer } from "@Core/services/ServiceContainer";
+import { InputText } from "@Core/components/dumb/InputText/InputText";
 const { authService } = ServiceContainer;
 
 interface IProps {}
@@ -35,12 +36,12 @@ const SigninForm: React.FunctionComponent<IProps> = () => {
     };
 
     return (
-        <S.Form onSubmit={onSubmit}>
-            <S.Input placeholder={"Логин"} onChange={(e) => setLogin(e.target.value)} value={login} type={"text"} />
-            <S.Input placeholder={"Пароль"} onChange={(e) => setPassword(e.target.value)} value={password} type={"password"} />
+        <S.StyledForm onSubmit={onSubmit}>
+            <InputText placeholder={"Логин"} onChange={(e) => setLogin(e.target.value)} value={login} type={"text"} />
+            <InputText placeholder={"Пароль"} onChange={(e) => setPassword(e.target.value)} value={password} type={"password"} />
 
-            <S.SendBtn type={"submit"}>Отправить</S.SendBtn>
-        </S.Form>
+            <S.StyledSendBtn type={"submit"}>Отправить</S.StyledSendBtn>
+        </S.StyledForm>
     );
 };
 
