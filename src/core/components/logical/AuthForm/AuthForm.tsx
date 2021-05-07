@@ -17,8 +17,8 @@ const AuthForm: React.FunctionComponent<IProps> = () => {
     return (
         <S.StyledAuthFormContainer>
             <S.StyledAuthNavigation>
-                <NavigationTab to={config.ROUTE_PATHS.authSignin} title={tabs.signin} />
-                <NavigationTab to={config.ROUTE_PATHS.authSignup} title={tabs.signup} disabled />
+                <S.StyledNavigationTab to={config.ROUTE_PATHS.authSignin} title={tabs.signin} />
+                <S.StyledNavigationTab to={config.ROUTE_PATHS.authSignup} title={tabs.signup} />
             </S.StyledAuthNavigation>
 
             <Switch>

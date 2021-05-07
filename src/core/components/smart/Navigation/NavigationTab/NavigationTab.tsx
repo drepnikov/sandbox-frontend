@@ -1,11 +1,10 @@
 import * as React from "react";
-import "../Navigation.scss";
-import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
-
+import * as S from "../styles";
 import { ServiceContainer } from "@Core/services/ServiceContainer";
 import { MouseEventHandler } from "react";
-const { stylesHandler, urlService } = ServiceContainer;
+import { RouteLink } from "@Core/components/smart/RouteLink/RouteLink";
+const { urlService } = ServiceContainer;
 
 export interface INavigationTabProps {
     title: string;
@@ -14,24 +13,20 @@ export interface INavigationTabProps {
     onClick?: MouseEventHandler;
     disabled?: boolean;
     icon?: React.FC;
+    className?: string;
 }
 
-const NavigationTab: React.FunctionComponent<INavigationTabProps> = ({ title, onClick, disabled, to }) => {
+const NavigationTab: React.FunctionComponent<INavigationTabProps> = ({ title, onClick, disabled, to, className }) => {
     const location = useLocation();
 
-    // Если будет to с query-параметрами, проверку не пройдет, это плохо
     const current = location.pathname === urlService.clearURLFromSearchParams(to);
 
-    const classNames = {
-        navigationTabElement: stylesHandler.getClassName("navigation__tab", { current, disabled }),
-    };
-
-    return disabled ? (
-        <a className={classNames.navigationTabElement}>{title}</a>
-    ) : (
-        <Link onClick={onClick ? onClick : undefined} className={classNames.navigationTabElement} to={to}>
-            {title}
-        </Link>
+    return (
+        <S.StyledNavigationTabContainer className={className} current={current}>
+            <RouteLink current={current} disabled={disabled} onClick={onClick} to={to}>
+                {title}
+            </RouteLink>
+        </S.StyledNavigationTabContainer>
     );
 };
 
