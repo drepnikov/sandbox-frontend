@@ -7,7 +7,7 @@ export const StyledAuthFormContainer = styled.div`
 `;
 
 export const StyledAuthNavigation = styled(Navigation)`
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     margin-top: 10px;
 `;
 

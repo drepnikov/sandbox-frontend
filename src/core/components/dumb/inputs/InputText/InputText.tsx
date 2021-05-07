@@ -1,5 +1,5 @@
 import * as React from "react";
-import * as S from "./styles";
+import * as S from "../styles";
 
 interface IProps extends React.InputHTMLAttributes<HTMLInputElement> {}
 

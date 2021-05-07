@@ -1,5 +1,6 @@
 import * as React from "react";
-import { AuthForm } from "@Core/components/logical/AuthForm/AuthForm";
+import { AuthForm } from "@Core/components/logical/AuthForm";
+
 import { useOnMountAnimation } from "@Features/animations/hooks/useOnMountAnimation";
 import { AnimationsEnum } from "@Features/animations/types/AnimationsEnum";
 
