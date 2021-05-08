@@ -34,7 +34,7 @@ export const formContainer = () => css`
         margin: 0 auto;
     }
 `;
-
+//todo: Попробуй для мобильной версии загружать более маленькую картинку
 export const infoBlockContainer = () => css`
     background-image: url(${background});
     background-position: bottom;

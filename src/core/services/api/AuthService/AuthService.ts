@@ -21,9 +21,6 @@ class AuthService extends _RequestService implements IAuthService {
     async login(params: ILoginParams): Promise<ILoginResponse> {
         const { login } = this.config.API;
 
-        // todo: не забудь убрать :)
-        if (params.login === "admin" && params.password === "12345") return { token: "админвсемадминамадмин" };
-
         const result = await this.post<ILoginResponse>(login, params);
 
         if (!result) throw new Error("Информация о сессии не получена");

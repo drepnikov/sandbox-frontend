@@ -14,18 +14,24 @@ const { authService } = ServiceContainer;
 interface IProps {}
 
 const SigninForm: React.FunctionComponent<IProps> = () => {
-    const { sessionStore } = useStore();
+    const { sessionStore, notificationStore } = useStore();
 
     const [login, setLogin] = useState("");
     const [password, setPassword] = useState("");
 
     const mutation = useMutation(
         () => {
+            throw new Error("Не реализовано");
+
             return authService.login({ password, login });
         },
         {
             onSuccess: (data) => {
                 sessionStore.setSession(data);
+            },
+
+            onError: () => {
+                notificationStore.showMessage("danger");
             },
         }
     );

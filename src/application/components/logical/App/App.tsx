@@ -7,6 +7,7 @@ import { useStore } from "@Core/hooks/useStore";
 import { useEffect } from "react";
 
 import { ServiceContainer } from "@Core/services/ServiceContainer";
+import { Notifications } from "@Core/components/smart/Notifications/Notifications";
 const { stylesHandler } = ServiceContainer;
 
 interface IProps {}
@@ -33,7 +34,12 @@ const App: React.FunctionComponent<IProps> = observer(() => {
         }
     };
 
-    return <div className={classNames.block}>{getRouter()}</div>;
+    return (
+        <div className={classNames.block}>
+            <Notifications />
+            {getRouter()}
+        </div>
+    );
 });
 
 export { App };
