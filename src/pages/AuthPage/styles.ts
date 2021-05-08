@@ -18,7 +18,7 @@ export const authPageContainer = () => css`
 
 export const formContainer = () => css`
     border-radius: 5%;
-    padding: 10px 25px;
+    padding: 20px 25px;
     background-color: rgba(66, 66, 66, 0.55);
     color: white;
 
@@ -27,7 +27,8 @@ export const formContainer = () => css`
     margin-top: 15px;
 
     @media (min-width: 576px) {
-        height: 250px;
+        padding-bottom: 30px;
+        height: auto;
         width: 450px;
 
         margin: 0 auto;

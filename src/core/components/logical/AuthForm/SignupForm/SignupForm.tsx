@@ -22,7 +22,7 @@ const SignupForm: React.FunctionComponent<IProps> = () => {
             <InputPassword placeholder={"Пароль"} onChange={(e) => setPassword(e.target.value)} value={password} />
             <InputEmail placeholder={"Email"} onChange={(e) => setPassword(e.target.value)} value={password} />
 
-            <DangerButton>Отправить</DangerButton>
+            <DangerButton css={S.authSendButton()}>Зарегистрироваться</DangerButton>
         </form>
     );
 };

@@ -41,7 +41,7 @@ const SigninForm: React.FunctionComponent<IProps> = () => {
             <InputText placeholder={"Логин"} onChange={(e) => setLogin(e.target.value)} value={login} type={"text"} />
             <InputPassword placeholder={"Пароль"} onChange={(e) => setPassword(e.target.value)} value={password} type={"password"} />
 
-            <DangerButton>Отправить</DangerButton>
+            <DangerButton css={S.authSendButton()}>Войти</DangerButton>
         </form>
     );
 };
