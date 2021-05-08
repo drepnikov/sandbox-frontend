@@ -1,10 +1,11 @@
 import * as React from "react";
 import * as S from "../styles";
+import { Input } from "@Core/components/dumb/inputs/Input/Input";
 
 interface IProps extends React.InputHTMLAttributes<HTMLInputElement> {}
 
 const InputEmail: React.FC<IProps> = (props) => {
-    return <S.StyledInputEmail type={"email"} {...props} />;
+    return <Input css={S.basicInputEmail()} type={"email"} {...props} />;
 };
 
 export { InputEmail };

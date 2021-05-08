@@ -22,11 +22,11 @@ const NavigationTab: React.FunctionComponent<INavigationTabProps> = ({ title, on
     const current = location.pathname === urlService.clearURLFromSearchParams(to);
 
     return (
-        <S.StyledNavigationTabContainer className={className} current={current}>
+        <span css={S.navigationTabContainer(current)} className={className}>
             <RouteLink current={current} disabled={disabled} onClick={onClick} to={to}>
                 {title}
             </RouteLink>
-        </S.StyledNavigationTabContainer>
+        </span>
     );
 };
 

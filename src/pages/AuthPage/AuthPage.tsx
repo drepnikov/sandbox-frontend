@@ -12,12 +12,12 @@ const AuthPage: React.FunctionComponent<IProps> = () => {
     const animation = useOnMountAnimation({ type: AnimationsEnum.showFromBottom });
 
     return (
-        <S.StyledAuthPageContainer>
-            <S.StyledInfoBlockContainer />
-            <S.StyledFormContainer className={animation}>
+        <div css={S.authPageContainer()}>
+            <div css={S.infoBlockContainer()} />
+            <div css={S.formContainer()} className={animation}>
                 <AuthForm />
-            </S.StyledFormContainer>
-        </S.StyledAuthPageContainer>
+            </div>
+        </div>
     );
 };
 

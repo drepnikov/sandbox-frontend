@@ -12,7 +12,7 @@ interface IProps {
 
 const RouteLink: React.FC<IProps> = ({ to, onClick, current, disabled, children }) => {
     return (
-        <S.StyledRouteLinkContainer current={Boolean(current)} disabled={Boolean(disabled)}>
+        <span css={S.routeLinkContainer(Boolean(current), Boolean(disabled))}>
             {disabled ? (
                 <a className={"route-link"}>{children}</a>
             ) : (
@@ -20,7 +20,7 @@ const RouteLink: React.FC<IProps> = ({ to, onClick, current, disabled, children 
                     {children}
                 </Link>
             )}
-        </S.StyledRouteLinkContainer>
+        </span>
     );
 };
 

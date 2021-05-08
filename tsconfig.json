@@ -20,7 +20,10 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
-    "useDefineForClassFields": true
+    "useDefineForClassFields": true,
+    "types": [
+      "@emotion/react/types/css-prop"
+    ]
   },
   "include": [
     "src"

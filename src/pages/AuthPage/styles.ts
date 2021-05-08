@@ -1,7 +1,7 @@
-import styled from "@emotion/styled";
 import background from "./assets/background.jpg";
+import { css } from "@emotion/react";
 
-export const StyledAuthPageContainer = styled.div`
+export const authPageContainer = () => css`
     max-height: 100vh;
     overflow: hidden;
     display: grid;
@@ -16,7 +16,7 @@ export const StyledAuthPageContainer = styled.div`
     }
 `;
 
-export const StyledFormContainer = styled.div`
+export const formContainer = () => css`
     border-radius: 5%;
     padding: 10px 25px;
     background-color: rgba(66, 66, 66, 0.55);
@@ -34,7 +34,7 @@ export const StyledFormContainer = styled.div`
     }
 `;
 
-export const StyledInfoBlockContainer = styled.div`
+export const infoBlockContainer = () => css`
     background-image: url(${background});
     background-position: bottom;
     background-size: cover;

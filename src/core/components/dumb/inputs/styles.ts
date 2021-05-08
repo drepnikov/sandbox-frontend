@@ -1,7 +1,6 @@
-import styled from "@emotion/styled";
 import { css } from "@emotion/react";
 
-const mainInputStyles = css`
+export const basicInput = () => css`
     display: block;
     width: 100%;
     margin-bottom: 10px;
@@ -15,14 +14,8 @@ const mainInputStyles = css`
     outline: none;
 `;
 
-export const StyledInputText = styled.input`
-    ${mainInputStyles};
-`;
+export const basicInputText = () => css``;
 
-export const StyledInputPassword = styled.input`
-    ${mainInputStyles};
-`;
+export const basicInputPassword = () => css``;
 
-export const StyledInputEmail = styled.input`
-    ${mainInputStyles};
-`;
+export const basicInputEmail = () => css``;

@@ -6,9 +6,13 @@ interface IProps {
 }
 
 const Navigation: React.FunctionComponent<IProps> = ({ className, children }) => {
-    // присутствие параметра className обязательно, чтобы при желании можно было стилизовать этот компонент через styled
+    // присутствие параметра className обязательно, чтобы при желании можно было стилизовать этот компонент через css
 
-    return <S.StyledNavigationContainer className={className}>{children}</S.StyledNavigationContainer>;
+    return (
+        <nav css={S.navigationContainer()} className={className}>
+            {children}
+        </nav>
+    );
 };
 
 export { Navigation };

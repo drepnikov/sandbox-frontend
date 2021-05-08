@@ -1,4 +1,3 @@
-import styled from "@emotion/styled";
 import { css } from "@emotion/react";
 
 const disabledLink = css`
@@ -10,13 +9,13 @@ const currentLink = css`
     cursor: default;
 `;
 
-export const StyledRouteLinkContainer = styled.span<{ disabled: boolean; current: boolean }>`
+export const routeLinkContainer = (current: boolean, disabled: boolean) => css`
     .route-link {
         text-decoration: none;
         color: inherit;
         text-align: center;
 
-        ${({ disabled }) => (disabled ? disabledLink : null)};
-        ${({ current }) => (current ? currentLink : null)}
+        ${disabled && disabledLink};
+        ${current && currentLink}
     }
 `;

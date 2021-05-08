@@ -8,6 +8,7 @@ import { useStore } from "@Core/hooks/useStore";
 import * as S from "../styles";
 
 import { ServiceContainer } from "@Core/services/ServiceContainer";
+import { DangerButton } from "@Core/components/dumb/buttons";
 const { authService } = ServiceContainer;
 
 interface IProps {}
@@ -36,12 +37,12 @@ const SigninForm: React.FunctionComponent<IProps> = () => {
     };
 
     return (
-        <S.StyledForm onSubmit={onSubmit}>
+        <form css={S.authForm()} onSubmit={onSubmit}>
             <InputText placeholder={"Логин"} onChange={(e) => setLogin(e.target.value)} value={login} type={"text"} />
             <InputPassword placeholder={"Пароль"} onChange={(e) => setPassword(e.target.value)} value={password} type={"password"} />
 
-            <S.StyledSendBtn type={"submit"}>Отправить</S.StyledSendBtn>
-        </S.StyledForm>
+            <DangerButton>Отправить</DangerButton>
+        </form>
     );
 };
 

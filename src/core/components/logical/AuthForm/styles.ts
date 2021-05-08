@@ -1,26 +1,18 @@
-import styled from "@emotion/styled";
-import { Navigation } from "@Core/components/smart/Navigation/Navigation";
-import { NavigationTab } from "@Core/components/smart/Navigation/NavigationTab/NavigationTab";
+import { css } from "@emotion/react";
 
-export const StyledAuthFormContainer = styled.div`
+export const authFormContainer = () => css`
     width: 100%;
 `;
 
-export const StyledAuthNavigation = styled(Navigation)`
+export const authNavigation = () => css`
     margin-bottom: 30px;
     margin-top: 10px;
 `;
 
-export const StyledNavigationTab = styled(NavigationTab)`
+export const authNavigationTab = () => css`
     .route-link {
         background-color: black;
     }
 `;
 
-export const StyledForm = styled.form``;
-
-export const StyledSendBtn = styled.button`
-    width: 100%;
-
-    color: white;
-`;
+export const authForm = () => css``;
