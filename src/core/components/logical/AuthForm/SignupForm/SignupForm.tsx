@@ -6,7 +6,7 @@ import { InputEmail, InputPassword, InputText } from "@Core/components/dumb/inpu
 import { DangerButton } from "@Core/components/dumb/buttons";
 import { useMutation } from "react-query";
 import { ServiceContainer } from "@Core/services/ServiceContainer";
-import { ActionConditionsEnum } from "@Core/types/temp";
+import { ActionConditionsEnum } from "@Core/types/common";
 const { authService } = ServiceContainer;
 
 interface IProps {}

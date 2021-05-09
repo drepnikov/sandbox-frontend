@@ -3,11 +3,13 @@ import * as S from "./styles";
 import { observer } from "mobx-react-lite";
 import { useStore } from "@Core/hooks/useStore";
 import { useEffect } from "react";
-import { ActionConditionsEnum } from "@Core/types/temp";
+import { ActionConditionsEnum } from "@Core/types/common";
 
 interface IProps {}
 
 const Notifications: React.FC<IProps> = observer(() => {
+    //todo: Анимация почему-то отрабатывает с глитчем, разберись
+
     const { notificationStore } = useStore();
     const duration = 3000;
     const show = notificationStore.message;

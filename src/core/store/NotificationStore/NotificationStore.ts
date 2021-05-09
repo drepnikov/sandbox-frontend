@@ -1,5 +1,5 @@
 import { action, makeObservable, observable } from "mobx";
-import { ActionConditionsEnum } from "@Core/types/temp";
+import { ActionConditionsEnum } from "@Core/types/common";
 
 export type NotificationMessagesType = ActionConditionsEnum | null;
 

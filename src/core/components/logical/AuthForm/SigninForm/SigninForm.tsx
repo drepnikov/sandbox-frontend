@@ -9,7 +9,7 @@ import * as S from "../styles";
 
 import { ServiceContainer } from "@Core/services/ServiceContainer";
 import { DangerButton } from "@Core/components/dumb/buttons";
-import { ActionConditionsEnum } from "@Core/types/temp";
+import { ActionConditionsEnum } from "@Core/types/common";
 
 const { authService } = ServiceContainer;
 

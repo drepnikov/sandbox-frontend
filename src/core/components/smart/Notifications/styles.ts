@@ -1,7 +1,7 @@
 import { css } from "@emotion/react";
 import { NotificationMessagesType } from "@Core/store/NotificationStore/NotificationStore";
 import { fadeInAndOut } from "@Features/animations/styles";
-import { ActionConditionsEnum } from "@Core/types/temp";
+import { ActionConditionsEnum } from "@Core/types/common";
 
 const width = 300;
 const marginLeft = width / 2;
