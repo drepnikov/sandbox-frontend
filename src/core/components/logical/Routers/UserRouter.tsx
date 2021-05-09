@@ -2,7 +2,6 @@ import * as React from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
 import { MainPage } from "@Pages/MainPage/MainPage";
 import { config } from "@App/config";
-import { Showcase } from "@Pages/Showcase/Showcase";
 import { ServiceContainer } from "@Core/services/ServiceContainer";
 import { Header } from "@Core/components/smart/Header/Header";
 const { stylesHandler } = ServiceContainer;
@@ -25,7 +24,7 @@ const UserRouter: React.FunctionComponent<IProps> = () => {
                     <Route exact={true} path={ROUTE_PATHS.main} component={MainPage} />
 
                     {/* 50 компонентов, курс*/}
-                    <Route path={ROUTE_PATHS.showcase} component={Showcase} />
+                    {/*<Route path={ROUTE_PATHS.showcase} component={Showcase} />*/}
 
                     <Redirect from="*" to={ROUTE_PATHS.main} />
                 </Switch>
