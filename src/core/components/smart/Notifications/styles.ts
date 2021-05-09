@@ -1,34 +1,32 @@
 import { css } from "@emotion/react";
 import { NotificationMessagesType } from "@Core/store/NotificationStore/NotificationStore";
+import { fadeInAndOut } from "@Features/animations/styles";
+import { ActionConditionsEnum } from "@Core/types/temp";
 
-const width = 100;
+const width = 300;
 const marginLeft = width / 2;
 
 const messages = {
-    danger: css`
+    [ActionConditionsEnum.danger]: css`
         color: red;
     `,
-    info: css`
+    [ActionConditionsEnum.info]: css`
         color: white;
     `,
-    success: css`
-        color: blue;
+    [ActionConditionsEnum.success]: css`
+        color: green;
     `,
 };
 
-const display = css`
-    display: block;
-`;
-
-export const notifications = (show: NotificationMessagesType) => css`
+export const notifications = (show: Exclude<NotificationMessagesType, null>, duration: number) => css`
     position: fixed;
+    top: 20px;
     left: 50%;
+    text-align: center;
     width: ${width}px;
     margin-left: -${marginLeft}px;
-    height: 100px;
-    background-color: #ad8080;
-    display: none;
 
-    ${show && display};
-    ${show && messages[show]}
+    ${messages[show]}
+
+    ${fadeInAndOut(duration)}
 `;

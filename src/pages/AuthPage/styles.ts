@@ -1,5 +1,6 @@
 import background from "./assets/background.jpg";
 import { css } from "@emotion/react";
+import { showFromBottom } from "@Features/animations/styles";
 
 export const authPageContainer = () => css`
     max-height: 100vh;
@@ -25,6 +26,8 @@ export const formContainer = () => css`
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.199);
     height: 50vh;
     margin-top: 15px;
+
+    ${showFromBottom()}
 
     @media (min-width: 576px) {
         padding-bottom: 30px;

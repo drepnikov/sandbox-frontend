@@ -9,6 +9,8 @@ import * as S from "../styles";
 
 import { ServiceContainer } from "@Core/services/ServiceContainer";
 import { DangerButton } from "@Core/components/dumb/buttons";
+import { ActionConditionsEnum } from "@Core/types/temp";
+
 const { authService } = ServiceContainer;
 
 interface IProps {}
@@ -31,7 +33,7 @@ const SigninForm: React.FunctionComponent<IProps> = () => {
             },
 
             onError: () => {
-                notificationStore.showMessage("danger");
+                notificationStore.showMessage(ActionConditionsEnum.danger);
             },
         }
     );

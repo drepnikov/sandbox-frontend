@@ -1,6 +1,7 @@
 import { action, makeObservable, observable } from "mobx";
+import { ActionConditionsEnum } from "@Core/types/temp";
 
-export type NotificationMessagesType = "info" | "danger" | "success" | null;
+export type NotificationMessagesType = ActionConditionsEnum | null;
 
 interface HistoryMessage {
     type: NotificationMessagesType;
@@ -10,29 +11,24 @@ interface HistoryMessage {
 class NotificationStore {
     message: NotificationMessagesType = null;
     history: HistoryMessage[] = [];
-    timerId?: number;
+    timerId?: number | null;
 
     constructor() {
         makeObservable(this, {
             message: observable,
             showMessage: action,
             history: observable,
+            hideMessage: action,
         });
     }
 
-    showMessage = (type: NotificationMessagesType, description?: any, duration: number = 3000) => {
-        if (this.timerId) clearTimeout(this.timerId);
-
+    showMessage = (type: NotificationMessagesType, description?: any) => {
         this.message = type;
 
         this.history.push({ type, errorDescription: description });
-
-        this.timerId = window.setTimeout(() => {
-            this.hideMessage();
-        }, duration);
     };
 
-    private hideMessage = () => {
+    hideMessage = () => {
         this.message = null;
     };
 }

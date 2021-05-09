@@ -20,8 +20,6 @@ import "@Core/styles/reseter.scss";
 
 // Основные стили для core и фичей
 import "@Core/styles/main.scss";
-import "@Features/animations/styles/main.scss";
-import "@Features/colorTheme/styles/main.scss";
 
 ReactDOM.render(
     <React.StrictMode>
